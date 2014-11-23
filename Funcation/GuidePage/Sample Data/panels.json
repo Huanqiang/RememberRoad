@@ -1,0 +1,23 @@
+[
+ {
+ "text" : "Welcome to Surfboard.",
+ "image" : "swipe",
+ },
+ {
+ "text" : "Surfboard makes it delightfully easy to craft onboarding experiences.",
+ "image" : "surfer",
+ },
+ {
+ "text" : "You provide an array of panels and Surfboard figures out the rest.",
+ "image" : "panels",
+ },
+ {
+ "text" : "See the documentation on GitHub for more information.",
+ "image" : "github",
+ },
+ {
+ "text" : "If you like Surfboard give me a shoutout on Twitter.\nI'm @bermaniastudios.",
+ "image" : "twitter",
+ "button" : "Thanks for Surfing!"
+ }
+]

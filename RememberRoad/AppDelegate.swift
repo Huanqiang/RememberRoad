@@ -13,18 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mapManage: BMKMapManager?
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        self.mapManage = BMKMapManager()
-        //如果要关注网络及授权验证事件，请设定     generalDelegate参数
-        var ret: Bool = self.mapManage!.start("1rA9OQm8j28UtewEhU48u8l1", generalDelegate: nil)
-        if (!ret) {
-            println("manager start failed!")
-        }
         
         return true
     }
@@ -41,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -115,6 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+
 
 }
 
