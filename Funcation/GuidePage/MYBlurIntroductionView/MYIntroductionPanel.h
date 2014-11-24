@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-const static CGFloat kTopPadding = 30;
+const static CGFloat kTopPadding = 45;
 const static CGFloat kLeftRightMargins = 10;
 const static CGFloat kBottomPadding = 48;
 const static CGFloat kHeaderTitlePadding = 10;

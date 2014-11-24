@@ -46,20 +46,15 @@
     NSString *skipString = NSLocalizedString(@"进入应用", nil);
     CGFloat skipStringWidth = 0;
     kSkipButtonFont = [UIFont systemFontOfSize:20];
-    
-    if ([MYIntroductionPanel runningiOS7]) {
-        //Calculate Title Height
-        NSDictionary *titleAttributes = [NSDictionary dictionaryWithObject:kSkipButtonFont forKey: NSFontAttributeName];
-        skipStringWidth = [skipString boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:titleAttributes context:nil].size.width;
-        skipStringWidth = ceilf(skipStringWidth);
-    }
-    else {
-        skipStringWidth = [skipString sizeWithFont:kSkipButtonFont constrainedToSize:CGSizeMake(MAXFLOAT, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping].width;
-    }
+
+    //Calculate Title Height
+    NSDictionary *titleAttributes = [NSDictionary dictionaryWithObject:kSkipButtonFont forKey: NSFontAttributeName];
+    skipStringWidth = [skipString boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:titleAttributes context:nil].size.width;
+    skipStringWidth = ceilf(skipStringWidth);
     
     //Left Skip Button
     self.LeftSkipButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.LeftSkipButton.frame = CGRectMake(10, self.frame.size.height - 48, 46, 37);
+    self.LeftSkipButton.frame = CGRectMake(10, self.frame.size.height - 70, 46, 37);
     [self.LeftSkipButton setTitle:skipString forState:UIControlStateNormal];
     [self.LeftSkipButton.titleLabel setFont:kSkipButtonFont];
     [self.LeftSkipButton addTarget:self action:@selector(didPressSkipButton) forControlEvents:UIControlEventTouchUpInside];
@@ -68,7 +63,7 @@
     //Right Skip Button
     self.RightSkipButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    self.RightSkipButton.backgroundColor = [UIColor colorWithRed:180/250 green:180/250 blue:180/250 alpha:0.5];
-    self.RightSkipButton.frame = CGRectMake((self.frame.size.width - skipStringWidth) /2, self.frame.size.height - 58, skipStringWidth + 10, 24);
+    self.RightSkipButton.frame = CGRectMake((self.frame.size.width - skipStringWidth) /2, self.frame.size.height - 80, skipStringWidth + 10, 24);
     [self.RightSkipButton.titleLabel setFont:kSkipButtonFont];
     [self.RightSkipButton setTitle:skipString forState:UIControlStateNormal];
     [self.RightSkipButton addTarget:self action:@selector(didPressSkipButton) forControlEvents:UIControlEventTouchUpInside];

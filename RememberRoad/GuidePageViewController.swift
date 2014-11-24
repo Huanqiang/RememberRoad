@@ -15,24 +15,20 @@ class GuidePageViewController: UIViewController, MYIntroductionDelegate {
         super.viewDidLoad()
     }
     
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.GuideInterfaceOperation()
-//    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.GuideInterfaceOperation()
     }
     
     func GuideInterfaceOperation() {
-        var str: String = LogInToolClass.shareInstance().getInfo("firstLogin")
-        if str == "1" {
-            self.gotoMainViewController()
-        }else {
-            LogInToolClass.shareInstance().saveInfo("1", infoType: "firstLogin")
-            self.createGuidePage()
-        }
+        self.createGuidePage()
+//        var str: String = LogInToolClass.shareInstance().getInfo("firstLogin")
+//        if str == "1" {
+//            self.gotoMainViewController()
+//        }else {
+//            LogInToolClass.shareInstance().saveInfo("1", infoType: "firstLogin")
+//            self.createGuidePage()
+//        }
     }
     
     func createGuidePage() {

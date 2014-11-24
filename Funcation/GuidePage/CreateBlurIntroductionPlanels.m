@@ -24,10 +24,10 @@ static CreateBlurIntroductionPlanels *instnce;
 -(NSArray *)buildIntro:(CGFloat)width height:(CGFloat)height{
     //Create Stock Panel with header
     UIView *headerView = [[NSBundle mainBundle] loadNibNamed:@"PanelOfGuideHeader" owner:nil options:nil][0];
-    MYIntroductionPanel *panel1 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) title:@"Welcome to MYBlurIntroductionView" description:@"MYBlurIntroductionView is a powerful platform for building app introductions and tutorials. Built on the MYIntroductionView core, this revamped version has been reengineered for beauty and greater developer control." image:[UIImage imageNamed:@"HeaderImage.png"] header:headerView];
+    MYIntroductionPanel *panel1 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) title:@"帮你重现来时的路" description:@"\n\n你还在因为自己的路痴为找不到回家的路？\n\n不用担心，有“记路”." image:[UIImage imageNamed:@"lose.png"] header:headerView];
     
     //Create Stock Panel With Image
-    MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) title:@"Automated Stock Panels" description:@"Need a quick-and-dirty solution for your app introduction? MYBlurIntroductionView comes with customizable stock panels that make writing an introduction a walk in the park. Stock panels come with optional blurring (iOS 7) and background image. A full panel is just one method away!" image:[UIImage imageNamed:@"ForkImage.png"]];
+    MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) title:@"一键拨打" description:@"\n\n快设置的你最亲密的联系人吧，可以一键 call 哟!\n\n注意只能设置一次，所以要慎重考虑呢！" image:[UIImage imageNamed:@"call.png"]];
     
     //Create Panel From Nib
     MYIntroductionPanel *panel3 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) nibNamed:@"PanelOfGuide"];
@@ -36,7 +36,7 @@ static CreateBlurIntroductionPlanels *instnce;
     //    MYCustomPanel *panel4 = [[MYCustomPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) nibNamed:@"MYCustomPanel"];
     
     //Add panels to an array
-    NSArray *panels = @[panel1, panel2, panel3];
+    NSArray *panels = @[panel1, panel2];
     
     return panels;
 }

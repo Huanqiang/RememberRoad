@@ -76,5 +76,5 @@ typedef enum {
 -(void)setEnabled:(BOOL)enabled;
 
 //Customization Methods
--(void)setBlurTintColor:(UIColor *)blurTintColor;
+//-(void)setBlurTintColor:(UIColor *)blurTintColor;
 @end

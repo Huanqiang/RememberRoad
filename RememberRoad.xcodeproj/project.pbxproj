@@ -32,6 +32,9 @@
 		E68278D61A22D3DC00779406 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E68278CE1A22D3DC00779406 /* MYIntroductionPanel.m */; };
 		E68278D91A22D40000779406 /* PanelOfGuide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68278D71A22D40000779406 /* PanelOfGuide.xib */; };
 		E68278DA1A22D40000779406 /* PanelOfGuideHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68278D81A22D40000779406 /* PanelOfGuideHeader.xib */; };
+		E68278E11A23004600779406 /* lose.png in Resources */ = {isa = PBXBuildFile; fileRef = E68278E01A23004600779406 /* lose.png */; };
+		E68278E31A23040E00779406 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = E68278E21A23040E00779406 /* call.png */; };
+		E68278E51A2307EC00779406 /* Icon_Navition.png in Resources */ = {isa = PBXBuildFile; fileRef = E68278E41A2307EC00779406 /* Icon_Navition.png */; };
 		E68401EB1A21B91C0045652B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68401EA1A21B91C0045652B /* AddressBook.framework */; };
 		E68401ED1A21B9220045652B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68401EC1A21B9220045652B /* AddressBookUI.framework */; };
 		E68401F01A21B9540045652B /* GainAddressBookClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68401EF1A21B9540045652B /* GainAddressBookClass.swift */; };
@@ -114,6 +117,9 @@
 		E68278CE1A22D3DC00779406 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
 		E68278D71A22D40000779406 /* PanelOfGuide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanelOfGuide.xib; sourceTree = "<group>"; };
 		E68278D81A22D40000779406 /* PanelOfGuideHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanelOfGuideHeader.xib; sourceTree = "<group>"; };
+		E68278E01A23004600779406 /* lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lose.png; path = Image/lose.png; sourceTree = "<group>"; };
+		E68278E21A23040E00779406 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = call.png; path = Image/call.png; sourceTree = "<group>"; };
+		E68278E41A2307EC00779406 /* Icon_Navition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_Navition.png; path = Image/Icon_Navition.png; sourceTree = "<group>"; };
 		E68401EA1A21B91C0045652B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E68401EC1A21B9220045652B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		E68401EF1A21B9540045652B /* GainAddressBookClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GainAddressBookClass.swift; path = GainAddressBook/GainAddressBookClass.swift; sourceTree = "<group>"; };
@@ -229,7 +235,8 @@
 		E67EA4331A20868D004A9590 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				E6BA552E1A21784C0015AD1D /* navigation */,
+				E68278DB1A22FAE700779406 /* GuidePage */,
+				E6BA552E1A21784C0015AD1D /* location_Navigation */,
 				E67EA4341A2086CF004A9590 /* Icon */,
 				E67EA43F1A208980004A9590 /* location.png */,
 				E67578261A21AE1100B78F77 /* phone.png */,
@@ -293,6 +300,16 @@
 				E68278CE1A22D3DC00779406 /* MYIntroductionPanel.m */,
 			);
 			path = MYBlurIntroductionView;
+			sourceTree = "<group>";
+		};
+		E68278DB1A22FAE700779406 /* GuidePage */ = {
+			isa = PBXGroup;
+			children = (
+				E68278E41A2307EC00779406 /* Icon_Navition.png */,
+				E68278E21A23040E00779406 /* call.png */,
+				E68278E01A23004600779406 /* lose.png */,
+			);
+			name = GuidePage;
 			sourceTree = "<group>";
 		};
 		E68401EE1A21B9310045652B /* GainAddressBook */ = {
@@ -498,7 +515,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E6BA552E1A21784C0015AD1D /* navigation */ = {
+		E6BA552E1A21784C0015AD1D /* location_Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				E6BA552F1A2178590015AD1D /* location_end.png */,
@@ -506,7 +523,7 @@
 				E6BA55311A2178590015AD1D /* location_start.png */,
 				E6BA55321A2178590015AD1D /* location_start@2x.png */,
 			);
-			name = navigation;
+			name = location_Navigation;
 			sourceTree = "<group>";
 		};
 		E6F314211A020DCE0003CA9F /* Model */ = {
@@ -610,8 +627,11 @@
 				E6BA55361A2178590015AD1D /* location_start@2x.png in Resources */,
 				E68278D11A22D3DC00779406 /* ForkImage.png in Resources */,
 				E6A97FC319FFBB6A00FA060A /* NZAlertView-Icons.bundle in Resources */,
+				E68278E31A23040E00779406 /* call.png in Resources */,
+				E68278E11A23004600779406 /* lose.png in Resources */,
 				E67EA43B1A2086E1004A9590 /* Icon_80.png in Resources */,
 				E68278D31A22D3DC00779406 /* Toronto, ON.jpg in Resources */,
+				E68278E51A2307EC00779406 /* Icon_Navition.png in Resources */,
 				E6A97F4219FFB35400FA060A /* Main.storyboard in Resources */,
 				E67578291A21AE1100B78F77 /* phone@2x.png in Resources */,
 				E6A97FC819FFBB6A00FA060A /* NZAlertView.xib in Resources */,
