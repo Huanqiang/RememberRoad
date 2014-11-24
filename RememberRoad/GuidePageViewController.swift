@@ -21,14 +21,13 @@ class GuidePageViewController: UIViewController, MYIntroductionDelegate {
     }
     
     func GuideInterfaceOperation() {
-        self.createGuidePage()
-//        var str: String = LogInToolClass.shareInstance().getInfo("firstLogin")
-//        if str == "1" {
-//            self.gotoMainViewController()
-//        }else {
-//            LogInToolClass.shareInstance().saveInfo("1", infoType: "firstLogin")
-//            self.createGuidePage()
-//        }
+        var str: String = LogInToolClass.shareInstance().getInfo("firstLogin")
+        if str == "1" {
+            self.gotoMainViewController()
+        }else {
+            LogInToolClass.shareInstance().saveInfo("1", infoType: "firstLogin")
+            self.createGuidePage()
+        }
     }
     
     func createGuidePage() {
