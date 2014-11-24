@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MYIntroductionPanel">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Toronto, ON.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-wS-vjc">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iq-bR-uag">
+                    <rect key="frame" x="490" y="60" width="60" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="VmF-oh-LLk"/>
+                        <constraint firstAttribute="height" constant="21" id="euU-y4-liw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="介绍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-Qi-dRN">
+                    <rect key="frame" x="499" y="102" width="34" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="34" id="WDQ-z4-qrb"/>
+                        <constraint firstAttribute="height" constant="21" id="Y4d-4h-esX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QBv-wS-vjc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Dw-eZ-Ydq"/>
+                <constraint firstAttribute="trailing" secondItem="8iq-bR-uag" secondAttribute="trailing" constant="50" id="7JN-Dl-sbA"/>
+                <constraint firstAttribute="bottom" secondItem="QBv-wS-vjc" secondAttribute="bottom" id="KDO-lV-gJD"/>
+                <constraint firstItem="8iq-bR-uag" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="Sxh-V1-QEm"/>
+                <constraint firstItem="Y1u-Qi-dRN" firstAttribute="top" secondItem="8iq-bR-uag" secondAttribute="bottom" constant="21" id="V8d-9Q-94o"/>
+                <constraint firstAttribute="trailing" secondItem="Y1u-Qi-dRN" secondAttribute="trailing" constant="67" id="Vte-7O-O4R"/>
+                <constraint firstItem="QBv-wS-vjc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZyZ-9W-e9F"/>
+                <constraint firstAttribute="trailing" secondItem="QBv-wS-vjc" secondAttribute="trailing" id="jZV-7Q-Gch"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Toronto, ON.jpg" width="2500" height="1667"/>
+    </resources>
+</document>

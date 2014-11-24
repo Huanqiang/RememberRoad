@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, SRFSurfboardDelegate{
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     
     @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var locationImageView: UIImageView!
@@ -40,11 +40,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // 创建 定位服务
         self.startLocation()
     }
-    
-    override func viewWillAppear(animated: Bool) {
-//        GuidePage.shareInstance(self, deleagte: self).GuideInterfaceOperation()
-    }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

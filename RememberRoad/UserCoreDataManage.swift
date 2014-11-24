@@ -66,7 +66,7 @@ class UserCoreDataManage: NSObject {
         let timePre: NSPredicate = NSPredicate(format: "state = %d", 1)!
         let predicates: Array = [timePre]
         let searchResults = CoreDataOperation.shareInstance().selectData(self.context!, entity: pointEntity!, sortDescriptors: sortDescriptors, predicates: predicates)
-        if (searchResults.isEmpty || searchResults.count == 0) {
+        if (searchResults.isEmpty || searchResults.count == 0 || searchResults.count == 1) {
             return []
         }
         

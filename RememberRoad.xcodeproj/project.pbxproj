@@ -21,14 +21,17 @@
 		E67EA43D1A2086E1004A9590 /* Icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = E67EA4381A2086E1004A9590 /* Icon_120.png */; };
 		E67EA43E1A2086E1004A9590 /* Icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = E67EA4391A2086E1004A9590 /* Icon_180.png */; };
 		E67EA4401A208980004A9590 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E67EA43F1A208980004A9590 /* location.png */; };
-		E67EA4571A208FA1004A9590 /* panels.json in Resources */ = {isa = PBXBuildFile; fileRef = E67EA4431A208FA1004A9590 /* panels.json */; };
-		E67EA4581A208FA1004A9590 /* Surfboard.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E67EA4441A208FA1004A9590 /* Surfboard.xcassets */; };
-		E67EA4591A208FA1004A9590 /* UIButton+IndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E67EA4491A208FA1004A9590 /* UIButton+IndexPath.m */; };
-		E67EA45A1A208FA1004A9590 /* SRFSurfboardPanelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E67EA44C1A208FA1004A9590 /* SRFSurfboardPanelCell.m */; };
-		E67EA45B1A208FA1004A9590 /* SRFSurfboardPanelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67EA44D1A208FA1004A9590 /* SRFSurfboardPanelCell.xib */; };
-		E67EA45C1A208FA1004A9590 /* SRFSurfboardPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E67EA4501A208FA1004A9590 /* SRFSurfboardPanel.m */; };
-		E67EA45D1A208FA1004A9590 /* SRFSurfboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E67EA4561A208FA1004A9590 /* SRFSurfboardViewController.m */; };
-		E67EA4621A209309004A9590 /* GuidePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EA4611A209309004A9590 /* GuidePage.swift */; };
+		E67EA4621A209309004A9590 /* GuidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EA4611A209309004A9590 /* GuidePageViewController.swift */; };
+		E68278CF1A22D3DC00779406 /* CreateBlurIntroductionPlanels.m in Sources */ = {isa = PBXBuildFile; fileRef = E68278C21A22D3DC00779406 /* CreateBlurIntroductionPlanels.m */; };
+		E68278D01A22D3DC00779406 /* CheckMarkWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = E68278C41A22D3DC00779406 /* CheckMarkWhite.png */; };
+		E68278D11A22D3DC00779406 /* ForkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E68278C51A22D3DC00779406 /* ForkImage.png */; };
+		E68278D21A22D3DC00779406 /* HeaderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E68278C61A22D3DC00779406 /* HeaderImage.png */; };
+		E68278D31A22D3DC00779406 /* Toronto, ON.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E68278C71A22D3DC00779406 /* Toronto, ON.jpg */; };
+		E68278D41A22D3DC00779406 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = E68278CA1A22D3DC00779406 /* AMBlurView.m */; };
+		E68278D51A22D3DC00779406 /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E68278CC1A22D3DC00779406 /* MYBlurIntroductionView.m */; };
+		E68278D61A22D3DC00779406 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E68278CE1A22D3DC00779406 /* MYIntroductionPanel.m */; };
+		E68278D91A22D40000779406 /* PanelOfGuide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68278D71A22D40000779406 /* PanelOfGuide.xib */; };
+		E68278DA1A22D40000779406 /* PanelOfGuideHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68278D81A22D40000779406 /* PanelOfGuideHeader.xib */; };
 		E68401EB1A21B91C0045652B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68401EA1A21B91C0045652B /* AddressBook.framework */; };
 		E68401ED1A21B9220045652B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68401EC1A21B9220045652B /* AddressBookUI.framework */; };
 		E68401F01A21B9540045652B /* GainAddressBookClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68401EF1A21B9540045652B /* GainAddressBookClass.swift */; };
@@ -96,20 +99,21 @@
 		E67EA4381A2086E1004A9590 /* Icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_120.png; path = Image/Icon_120.png; sourceTree = "<group>"; };
 		E67EA4391A2086E1004A9590 /* Icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_180.png; path = Image/Icon_180.png; sourceTree = "<group>"; };
 		E67EA43F1A208980004A9590 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Image/location.png; sourceTree = "<group>"; };
-		E67EA4431A208FA1004A9590 /* panels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = panels.json; sourceTree = "<group>"; };
-		E67EA4441A208FA1004A9590 /* Surfboard.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Surfboard.xcassets; sourceTree = "<group>"; };
-		E67EA4481A208FA1004A9590 /* UIButton+IndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+IndexPath.h"; sourceTree = "<group>"; };
-		E67EA4491A208FA1004A9590 /* UIButton+IndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IndexPath.m"; sourceTree = "<group>"; };
-		E67EA44B1A208FA1004A9590 /* SRFSurfboardPanelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardPanelCell.h; sourceTree = "<group>"; };
-		E67EA44C1A208FA1004A9590 /* SRFSurfboardPanelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFSurfboardPanelCell.m; sourceTree = "<group>"; };
-		E67EA44D1A208FA1004A9590 /* SRFSurfboardPanelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRFSurfboardPanelCell.xib; sourceTree = "<group>"; };
-		E67EA44F1A208FA1004A9590 /* SRFSurfboardPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardPanel.h; sourceTree = "<group>"; };
-		E67EA4501A208FA1004A9590 /* SRFSurfboardPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFSurfboardPanel.m; sourceTree = "<group>"; };
-		E67EA4511A208FA1004A9590 /* SRFSurfboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboard.h; sourceTree = "<group>"; };
-		E67EA4531A208FA1004A9590 /* SRFSurfboardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardDelegate.h; sourceTree = "<group>"; };
-		E67EA4551A208FA1004A9590 /* SRFSurfboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardViewController.h; sourceTree = "<group>"; };
-		E67EA4561A208FA1004A9590 /* SRFSurfboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFSurfboardViewController.m; sourceTree = "<group>"; };
-		E67EA4611A209309004A9590 /* GuidePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePage.swift; sourceTree = "<group>"; };
+		E67EA4611A209309004A9590 /* GuidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePageViewController.swift; sourceTree = "<group>"; };
+		E68278C11A22D3DC00779406 /* CreateBlurIntroductionPlanels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBlurIntroductionPlanels.h; sourceTree = "<group>"; };
+		E68278C21A22D3DC00779406 /* CreateBlurIntroductionPlanels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBlurIntroductionPlanels.m; sourceTree = "<group>"; };
+		E68278C41A22D3DC00779406 /* CheckMarkWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckMarkWhite.png; sourceTree = "<group>"; };
+		E68278C51A22D3DC00779406 /* ForkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForkImage.png; sourceTree = "<group>"; };
+		E68278C61A22D3DC00779406 /* HeaderImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderImage.png; sourceTree = "<group>"; };
+		E68278C71A22D3DC00779406 /* Toronto, ON.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Toronto, ON.jpg"; sourceTree = "<group>"; };
+		E68278C91A22D3DC00779406 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
+		E68278CA1A22D3DC00779406 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
+		E68278CB1A22D3DC00779406 /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
+		E68278CC1A22D3DC00779406 /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
+		E68278CD1A22D3DC00779406 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		E68278CE1A22D3DC00779406 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
+		E68278D71A22D40000779406 /* PanelOfGuide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanelOfGuide.xib; sourceTree = "<group>"; };
+		E68278D81A22D40000779406 /* PanelOfGuideHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanelOfGuideHeader.xib; sourceTree = "<group>"; };
 		E68401EA1A21B91C0045652B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E68401EC1A21B9220045652B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		E68401EF1A21B9540045652B /* GainAddressBookClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GainAddressBookClass.swift; path = GainAddressBook/GainAddressBookClass.swift; sourceTree = "<group>"; };
@@ -249,93 +253,46 @@
 		E67EA4411A208FA1004A9590 /* GuidePage */ = {
 			isa = PBXGroup;
 			children = (
-				E67EA4421A208FA1004A9590 /* Sample Data */,
-				E67EA4451A208FA1004A9590 /* SRFSurfboard */,
+				E68278D71A22D40000779406 /* PanelOfGuide.xib */,
+				E68278D81A22D40000779406 /* PanelOfGuideHeader.xib */,
+				E68278C11A22D3DC00779406 /* CreateBlurIntroductionPlanels.h */,
+				E68278C21A22D3DC00779406 /* CreateBlurIntroductionPlanels.m */,
+				E68278C31A22D3DC00779406 /* Image */,
+				E68278C81A22D3DC00779406 /* MYBlurIntroductionView */,
 			);
 			path = GuidePage;
-			sourceTree = "<group>";
-		};
-		E67EA4421A208FA1004A9590 /* Sample Data */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA4431A208FA1004A9590 /* panels.json */,
-				E67EA4441A208FA1004A9590 /* Surfboard.xcassets */,
-			);
-			path = "Sample Data";
-			sourceTree = "<group>";
-		};
-		E67EA4451A208FA1004A9590 /* SRFSurfboard */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA4461A208FA1004A9590 /* Panel Cells */,
-				E67EA44E1A208FA1004A9590 /* Panel Data Model */,
-				E67EA4511A208FA1004A9590 /* SRFSurfboard.h */,
-				E67EA4521A208FA1004A9590 /* Surfboard Delegate Protocol */,
-				E67EA4541A208FA1004A9590 /* Surfboard View Controller */,
-			);
-			path = SRFSurfboard;
-			sourceTree = "<group>";
-		};
-		E67EA4461A208FA1004A9590 /* Panel Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA4471A208FA1004A9590 /* Button Extension */,
-				E67EA44A1A208FA1004A9590 /* Default Cell */,
-			);
-			path = "Panel Cells";
-			sourceTree = "<group>";
-		};
-		E67EA4471A208FA1004A9590 /* Button Extension */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA4481A208FA1004A9590 /* UIButton+IndexPath.h */,
-				E67EA4491A208FA1004A9590 /* UIButton+IndexPath.m */,
-			);
-			path = "Button Extension";
-			sourceTree = "<group>";
-		};
-		E67EA44A1A208FA1004A9590 /* Default Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA44B1A208FA1004A9590 /* SRFSurfboardPanelCell.h */,
-				E67EA44C1A208FA1004A9590 /* SRFSurfboardPanelCell.m */,
-				E67EA44D1A208FA1004A9590 /* SRFSurfboardPanelCell.xib */,
-			);
-			path = "Default Cell";
-			sourceTree = "<group>";
-		};
-		E67EA44E1A208FA1004A9590 /* Panel Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA44F1A208FA1004A9590 /* SRFSurfboardPanel.h */,
-				E67EA4501A208FA1004A9590 /* SRFSurfboardPanel.m */,
-			);
-			path = "Panel Data Model";
-			sourceTree = "<group>";
-		};
-		E67EA4521A208FA1004A9590 /* Surfboard Delegate Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA4531A208FA1004A9590 /* SRFSurfboardDelegate.h */,
-			);
-			path = "Surfboard Delegate Protocol";
-			sourceTree = "<group>";
-		};
-		E67EA4541A208FA1004A9590 /* Surfboard View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E67EA4551A208FA1004A9590 /* SRFSurfboardViewController.h */,
-				E67EA4561A208FA1004A9590 /* SRFSurfboardViewController.m */,
-			);
-			path = "Surfboard View Controller";
 			sourceTree = "<group>";
 		};
 		E67EA45E1A20911E004A9590 /* StartControllerView */ = {
 			isa = PBXGroup;
 			children = (
-				E67EA4611A209309004A9590 /* GuidePage.swift */,
+				E67EA4611A209309004A9590 /* GuidePageViewController.swift */,
 			);
 			name = StartControllerView;
+			sourceTree = "<group>";
+		};
+		E68278C31A22D3DC00779406 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				E68278C41A22D3DC00779406 /* CheckMarkWhite.png */,
+				E68278C51A22D3DC00779406 /* ForkImage.png */,
+				E68278C61A22D3DC00779406 /* HeaderImage.png */,
+				E68278C71A22D3DC00779406 /* Toronto, ON.jpg */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		E68278C81A22D3DC00779406 /* MYBlurIntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				E68278C91A22D3DC00779406 /* AMBlurView.h */,
+				E68278CA1A22D3DC00779406 /* AMBlurView.m */,
+				E68278CB1A22D3DC00779406 /* MYBlurIntroductionView.h */,
+				E68278CC1A22D3DC00779406 /* MYBlurIntroductionView.m */,
+				E68278CD1A22D3DC00779406 /* MYIntroductionPanel.h */,
+				E68278CE1A22D3DC00779406 /* MYIntroductionPanel.m */,
+			);
+			path = MYBlurIntroductionView;
 			sourceTree = "<group>";
 		};
 		E68401EE1A21B9310045652B /* GainAddressBook */ = {
@@ -649,20 +606,23 @@
 			files = (
 				E67EA43E1A2086E1004A9590 /* Icon_180.png in Resources */,
 				E6BA55351A2178590015AD1D /* location_start.png in Resources */,
+				E68278D91A22D40000779406 /* PanelOfGuide.xib in Resources */,
 				E6BA55361A2178590015AD1D /* location_start@2x.png in Resources */,
+				E68278D11A22D3DC00779406 /* ForkImage.png in Resources */,
 				E6A97FC319FFBB6A00FA060A /* NZAlertView-Icons.bundle in Resources */,
-				E67EA4571A208FA1004A9590 /* panels.json in Resources */,
 				E67EA43B1A2086E1004A9590 /* Icon_80.png in Resources */,
+				E68278D31A22D3DC00779406 /* Toronto, ON.jpg in Resources */,
 				E6A97F4219FFB35400FA060A /* Main.storyboard in Resources */,
 				E67578291A21AE1100B78F77 /* phone@2x.png in Resources */,
-				E67EA4581A208FA1004A9590 /* Surfboard.xcassets in Resources */,
 				E6A97FC819FFBB6A00FA060A /* NZAlertView.xib in Resources */,
 				E67EA43A1A2086E1004A9590 /* Icon_58.png in Resources */,
+				E68278D21A22D3DC00779406 /* HeaderImage.png in Resources */,
+				E68278D01A22D3DC00779406 /* CheckMarkWhite.png in Resources */,
 				E67EA43C1A2086E1004A9590 /* Icon_87.png in Resources */,
 				E67EA43D1A2086E1004A9590 /* Icon_120.png in Resources */,
+				E68278DA1A22D40000779406 /* PanelOfGuideHeader.xib in Resources */,
 				E67EA4401A208980004A9590 /* location.png in Resources */,
 				E67578281A21AE1100B78F77 /* phone.png in Resources */,
-				E67EA45B1A208FA1004A9590 /* SRFSurfboardPanelCell.xib in Resources */,
 				E6BA55331A2178590015AD1D /* location_end.png in Resources */,
 				E6A97F4719FFB35400FA060A /* LaunchScreen.xib in Resources */,
 				E6A97F4419FFB35400FA060A /* Images.xcassets in Resources */,
@@ -691,13 +651,16 @@
 				E63EDEC31A10C3E300DC8C57 /* WayPoint.swift in Sources */,
 				E6A97F3F19FFB35400FA060A /* ViewController.swift in Sources */,
 				E6A97F3D19FFB35400FA060A /* RememberRoad.xcdatamodeld in Sources */,
-				E67EA4621A209309004A9590 /* GuidePage.swift in Sources */,
+				E67EA4621A209309004A9590 /* GuidePageViewController.swift in Sources */,
 				E6A97FBF19FFBB6A00FA060A /* CoreDataOperation.swift in Sources */,
 				E675782F1A21B1AB00B78F77 /* CusToolClass.swift in Sources */,
 				E6A97FC419FFBB6A00FA060A /* NZAlertView.m in Sources */,
+				E68278D51A22D3DC00779406 /* MYBlurIntroductionView.m in Sources */,
 				E6BA553C1A217ED90015AD1D /* AddCusAnnotation.swift in Sources */,
 				E69BC2B01A2210F200B0D17B /* pinyin.c in Sources */,
+				E68278D41A22D3DC00779406 /* AMBlurView.m in Sources */,
 				E63EDEC01A10B3EA00DC8C57 /* CLLocation+YCLocation.m in Sources */,
+				E68278CF1A22D3DC00779406 /* CreateBlurIntroductionPlanels.m in Sources */,
 				E68401FD1A21BE600045652B /* BOAlertController.m in Sources */,
 				E6A97FC619FFBB6A00FA060A /* UIImage+ImageWithColor.m in Sources */,
 				E68401FF1A21BE600045652B /* UIActionSheet+Blocks.m in Sources */,
@@ -705,17 +668,14 @@
 				E675782C1A21AF5000B78F77 /* LogInToolClass.swift in Sources */,
 				E6A97F3A19FFB35400FA060A /* AppDelegate.swift in Sources */,
 				E6A97FC719FFBB6A00FA060A /* UIImage+Screenshot.m in Sources */,
+				E68278D61A22D3DC00779406 /* MYIntroductionPanel.m in Sources */,
 				E6A97FC219FFBB6A00FA060A /* UIColor+StyleColor.m in Sources */,
 				E6A0D1531A13237B00CCCFE7 /* MapOperation.swift in Sources */,
 				E6A97FC119FFBB6A00FA060A /* Reachability.m in Sources */,
-				E67EA45D1A208FA1004A9590 /* SRFSurfboardViewController.m in Sources */,
 				E6F314251A020EDA0003CA9F /* UserCoreDataManage.swift in Sources */,
 				E6A97FC019FFBB6A00FA060A /* DetectionNetworkStatus.m in Sources */,
 				E68401FE1A21BE600045652B /* RIButtonItem.m in Sources */,
-				E67EA45C1A208FA1004A9590 /* SRFSurfboardPanel.m in Sources */,
 				E68401F31A21BD980045652B /* ShowAddressBookTableView.swift in Sources */,
-				E67EA4591A208FA1004A9590 /* UIButton+IndexPath.m in Sources */,
-				E67EA45A1A208FA1004A9590 /* SRFSurfboardPanelCell.m in Sources */,
 				E68401F01A21B9540045652B /* GainAddressBookClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
