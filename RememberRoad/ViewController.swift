@@ -53,7 +53,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     // 设置地图的显示范围
     func setCoordinateRegion(center: CLLocationCoordinate2D) {
-        //设置中心坐标
         // 创建一个以center为中心，上下各1000米，左右各1000米得区域，但其是一个矩形，不符合MapView的横纵比例
         let viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(center, 250, 250)
         mainMapView.setRegion(viewRegion, animated: true)
@@ -79,6 +78,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.setCoordinateRegion(newLocation.coordinate)
         self.wayPoint?.latitude = newLocation.coordinate.latitude;
         self.wayPoint?.longitude = newLocation.coordinate.longitude;
+        
+//        self.mainMapView.
+        
         let geo: CLGeocoder = CLGeocoder();
         geo.reverseGeocodeLocation(newLocation, completionHandler: {
             placeMarks, error in
@@ -178,6 +180,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         mapView.delegate = self
         return annotationView
+    }
+    
+    // MARK: - 切换地图类型
+    @IBAction func switchMapType(sender: AnyObject) {
+        var btn: UIButton = sender as UIButton
+        if btn.tag == 1 {
+            btn.tag = 2
+            self.mainMapView.mapType = .Standard
+            btn.setImage(UIImage(named: "Map_ChangedMapType1"), forState: .Normal)
+        }else {
+            btn.tag = 1
+            self.mainMapView.mapType = .Satellite
+            btn.setImage(UIImage(named: "Map_ChangedMapType2"), forState: .Normal)
+        }
     }
     
     // MARK: - 一键call

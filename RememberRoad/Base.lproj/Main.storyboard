@@ -85,6 +85,19 @@
                                     <action selector="callWithOneKey:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dog-eG-akW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMM-10-djB">
+                                <rect key="frame" x="540" y="142" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="e1J-Vn-74B"/>
+                                    <constraint firstAttribute="width" secondItem="nMM-10-djB" secondAttribute="height" multiplier="1:1" id="kWm-af-Rf1"/>
+                                </constraints>
+                                <state key="normal" image="Map_ChangedMapType2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchMapType:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rw5-CW-jg8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -92,7 +105,9 @@
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="4F0-ed-n3h"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b0E-3R-36P" secondAttribute="bottom" constant="20" id="BvF-2a-vac"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GSd-bS-4db"/>
+                            <constraint firstItem="nMM-10-djB" firstAttribute="top" secondItem="XVM-J2-rn1" secondAttribute="bottom" constant="20" id="Hgt-6t-Yyb"/>
                             <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="22" id="Neo-6S-AhV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nMM-10-djB" secondAttribute="trailing" constant="4" id="POj-sF-vop"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="VTK-ls-BY2"/>
                             <constraint firstItem="b0E-3R-36P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bXg-SH-Uk9"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="top" secondItem="F0d-c4-Xyv" secondAttribute="bottom" constant="20" id="gem-Ff-asF"/>
@@ -194,6 +209,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Map_ChangedMapType2.png" width="50" height="50"/>
         <image name="location.png" width="128" height="128"/>
         <image name="phone.png" width="64" height="64"/>
     </resources>
