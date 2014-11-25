@@ -47,6 +47,14 @@ class AddCusAnnotation: NSObject, MKMapViewDelegate {
         self.annotations.append(annotation)
     }
     
+    func addLocationAnnotation(myMapView: MKMapView, title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
+        var annotation: CusAnnotation = CusAnnotation(coordinate: coordinate)
+        annotation.title = title
+        annotation.subtitle = subTitle
+        myMapView.delegate = self
+        myMapView.addAnnotation(annotation)
+    }
+    
     func removeAnnotation(myMapView: MKMapView) {
         myMapView.removeAnnotations(annotations)
         annotations.removeAll(keepCapacity: true)

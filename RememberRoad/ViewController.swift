@@ -19,10 +19,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var location: CustomLoction? = CustomLoction.shareInstance()
     var addCusAnnotattion: AddCusAnnotation!
     var cusMapOverlay: CusMapOverlay!
+    var callWithOneKey: CallWIthOneKeyClass!
     var cusCoreData: UserCoreDataManage = UserCoreDataManage()         //存储
     var wayPoint: UserWayPoint?
     var walkTimer: NSTimer = NSTimer()
     var routeLine: MKPolyline = MKPolyline()
+    var locationAnnotation: CusAnnotation?
     
     
     override func viewDidLoad() {
@@ -30,6 +32,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Do any additional setup after loading the view, typically from a nib.
         cusMapOverlay = CusMapOverlay.shareInstance(self)
         addCusAnnotattion = AddCusAnnotation.shareInstance(self)
+        callWithOneKey = CallWIthOneKeyClass.shareInstance(self)
         
         // 创建 路况信息点
         wayPoint = UserWayPoint(time: NSDate())
@@ -69,7 +72,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         location?.stopLocation()
     }
     
-    
     // 获取 定位信息
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!){
         var currLocation : CLLocation = locations.last as CLLocation
@@ -78,8 +80,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.setCoordinateRegion(newLocation.coordinate)
         self.wayPoint?.latitude = newLocation.coordinate.latitude;
         self.wayPoint?.longitude = newLocation.coordinate.longitude;
-        
-//        self.mainMapView.
         
         let geo: CLGeocoder = CLGeocoder();
         geo.reverseGeocodeLocation(newLocation, completionHandler: {
@@ -94,6 +94,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             if places.count > 0 {
                 var p:CLPlacemark = places[0] as CLPlacemark
                 self.wayPoint?.address = p.name
+                
+                //添加标注
+                self.addLoctionAnnotation(p.name, coordinate: newLocation.coordinate)
             }else{
                 println("No Placemarks!")
             }
@@ -102,6 +105,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
         println(error)
+    }
+    
+    func addLoctionAnnotation(title: String, coordinate: CLLocationCoordinate2D) {
+        if (locationAnnotation != nil) {
+            self.mainMapView.removeAnnotation(locationAnnotation)
+        }
+        locationAnnotation = CusAnnotation(coordinate: coordinate)
+        locationAnnotation?.title = title
+        locationAnnotation?.subtitle = "3"
+        self.mainMapView.addAnnotation(locationAnnotation)
     }
     
     // MARK: - 开始外出走动
@@ -175,6 +188,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 annotationView?.image = UIImage(named: "location_start.png")
             }else if annotation.subtitle == "2" {
                 annotationView?.image = UIImage(named: "location_end.png")
+            }else if annotation.subtitle == "3" {
+                annotationView?.image = UIImage(named: "LocationAnnotation.png")
+                annotationView?.enabled = true
             }
         }
         
@@ -198,31 +214,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     // MARK: - 一键call
     @IBAction func callWithOneKey(sender: AnyObject) {
-        let phoneNumber = LogInToolClass.shareInstance().getInfo("phoneNumber")
-        let personName = LogInToolClass.shareInstance().getInfo("personName")
-        if phoneNumber == "" {
-            let showAddressBookTableView: ShowAddressBookTableView = self.storyboard?.instantiateViewControllerWithIdentifier("ShowAddressBookTableView") as ShowAddressBookTableView
-            self.presentViewController(showAddressBookTableView, animated: true, completion: nil)
-        }else {
-            self.createAlertView(personName, phoneNumber: phoneNumber)
-        }
-    }
-    
-    // 弹出对话框 提醒用户拨打电话
-    func createAlertView(personName: String, phoneNumber: String) {
-        var actionView:BOAlertController = BOAlertController(title: "提醒", message: "您确定要拨打电话给\(personName)吗？", subView: nil, viewController: self)
-        
-        let cancelItem: RIButtonItem = RIButtonItem.itemWithLabel("取消", action: {
-            println(1)
-        }) as RIButtonItem
-        actionView.addButton(cancelItem, type: RIButtonItemType_Cancel)
-        
-        let okItem: RIButtonItem = RIButtonItem.itemWithLabel("确定", action: {
-            CusToolClass.shareInstance().openWebURL("tel://\(phoneNumber)")
-        }) as RIButtonItem
-        actionView.addButton(okItem, type: RIButtonItemType_Destructive)
-        
-        actionView.show()
+        callWithOneKey.callWithOneKey()
     }
 
     // MARK: - 弹出框

@@ -49,6 +49,9 @@
 		E68401FE1A21BE600045652B /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E68401F81A21BE600045652B /* RIButtonItem.m */; };
 		E68401FF1A21BE600045652B /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E68401FA1A21BE600045652B /* UIActionSheet+Blocks.m */; };
 		E68402001A21BE600045652B /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E68401FC1A21BE600045652B /* UIAlertView+Blocks.m */; };
+		E68A0CC71A2467BA0042B52E /* CallWIthOneKeyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */; };
+		E694E1091A24266D00A11391 /* perple_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E1081A24266D00A11391 /* perple_walk.png */; };
+		E694E10B1A2431C700A11391 /* LocationAnnotation.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E10A1A2431C700A11391 /* LocationAnnotation.png */; };
 		E69BC2AF1A2210F200B0D17B /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = E69BC2AC1A2210F200B0D17B /* ChineseString.m */; };
 		E69BC2B01A2210F200B0D17B /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = E69BC2AD1A2210F200B0D17B /* pinyin.c */; };
 		E6A0D1531A13237B00CCCFE7 /* MapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A0D1521A13237B00CCCFE7 /* MapOperation.swift */; };
@@ -144,6 +147,9 @@
 		E68401FA1A21BE600045652B /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		E68401FB1A21BE600045652B /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		E68401FC1A21BE600045652B /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallWIthOneKeyClass.swift; sourceTree = "<group>"; };
+		E694E1081A24266D00A11391 /* perple_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perple_walk.png; path = Image/perple_walk.png; sourceTree = "<group>"; };
+		E694E10A1A2431C700A11391 /* LocationAnnotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LocationAnnotation.png; path = Image/LocationAnnotation.png; sourceTree = "<group>"; };
 		E69BC2AB1A2210F200B0D17B /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseString.h; path = GainAddressBook/ChineseString.h; sourceTree = "<group>"; };
 		E69BC2AC1A2210F200B0D17B /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChineseString.m; path = GainAddressBook/ChineseString.m; sourceTree = "<group>"; };
 		E69BC2AD1A2210F200B0D17B /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pinyin.c; path = GainAddressBook/pinyin.c; sourceTree = "<group>"; };
@@ -328,6 +334,8 @@
 		E68278E61A23159200779406 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E694E10A1A2431C700A11391 /* LocationAnnotation.png */,
+				E694E1081A24266D00A11391 /* perple_walk.png */,
 				E68278E71A23159F00779406 /* Map_ChangedMapType1.png */,
 				E68278E81A23159F00779406 /* Map_ChangedMapType2.png */,
 				E68278E91A23159F00779406 /* Map_compass.png */,
@@ -376,6 +384,7 @@
 		E6A0D1511A13232200CCCFE7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */,
 				E6BA553B1A217ED90015AD1D /* AddCusAnnotation.swift */,
 				E6B288D71A14A7360053A845 /* CusMapOverlay.swift */,
 				E6A0D1521A13237B00CCCFE7 /* MapOperation.swift */,
@@ -664,6 +673,7 @@
 				E6A97F4219FFB35400FA060A /* Main.storyboard in Resources */,
 				E67578291A21AE1100B78F77 /* phone@2x.png in Resources */,
 				E6A97FC819FFBB6A00FA060A /* NZAlertView.xib in Resources */,
+				E694E10B1A2431C700A11391 /* LocationAnnotation.png in Resources */,
 				E67EA43A1A2086E1004A9590 /* Icon_58.png in Resources */,
 				E68278D21A22D3DC00779406 /* HeaderImage.png in Resources */,
 				E68278D01A22D3DC00779406 /* CheckMarkWhite.png in Resources */,
@@ -672,6 +682,7 @@
 				E68278DA1A22D40000779406 /* PanelOfGuideHeader.xib in Resources */,
 				E67EA4401A208980004A9590 /* location.png in Resources */,
 				E67578281A21AE1100B78F77 /* phone.png in Resources */,
+				E694E1091A24266D00A11391 /* perple_walk.png in Resources */,
 				E68278F01A23159F00779406 /* Map_compass@2x.png in Resources */,
 				E6BA55331A2178590015AD1D /* location_end.png in Resources */,
 				E6A97F4719FFB35400FA060A /* LaunchScreen.xib in Resources */,
@@ -723,6 +734,7 @@
 				E68278D61A22D3DC00779406 /* MYIntroductionPanel.m in Sources */,
 				E6A97FC219FFBB6A00FA060A /* UIColor+StyleColor.m in Sources */,
 				E6A0D1531A13237B00CCCFE7 /* MapOperation.swift in Sources */,
+				E68A0CC71A2467BA0042B52E /* CallWIthOneKeyClass.swift in Sources */,
 				E6A97FC119FFBB6A00FA060A /* Reachability.m in Sources */,
 				E6F314251A020EDA0003CA9F /* UserCoreDataManage.swift in Sources */,
 				E6A97FC019FFBB6A00FA060A /* DetectionNetworkStatus.m in Sources */,
