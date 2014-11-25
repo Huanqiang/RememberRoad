@@ -50,6 +50,7 @@
 		E68401FF1A21BE600045652B /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E68401FA1A21BE600045652B /* UIActionSheet+Blocks.m */; };
 		E68402001A21BE600045652B /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E68401FC1A21BE600045652B /* UIAlertView+Blocks.m */; };
 		E68A0CC71A2467BA0042B52E /* CallWIthOneKeyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */; };
+		E68A0CC91A246C460042B52E /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CC81A246C460042B52E /* warning.png */; };
 		E694E1091A24266D00A11391 /* perple_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E1081A24266D00A11391 /* perple_walk.png */; };
 		E694E10B1A2431C700A11391 /* LocationAnnotation.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E10A1A2431C700A11391 /* LocationAnnotation.png */; };
 		E69BC2AF1A2210F200B0D17B /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = E69BC2AC1A2210F200B0D17B /* ChineseString.m */; };
@@ -148,6 +149,7 @@
 		E68401FB1A21BE600045652B /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		E68401FC1A21BE600045652B /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallWIthOneKeyClass.swift; sourceTree = "<group>"; };
+		E68A0CC81A246C460042B52E /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warning.png; path = Image/warning.png; sourceTree = "<group>"; };
 		E694E1081A24266D00A11391 /* perple_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perple_walk.png; path = Image/perple_walk.png; sourceTree = "<group>"; };
 		E694E10A1A2431C700A11391 /* LocationAnnotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LocationAnnotation.png; path = Image/LocationAnnotation.png; sourceTree = "<group>"; };
 		E69BC2AB1A2210F200B0D17B /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseString.h; path = GainAddressBook/ChineseString.h; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		E68278DB1A22FAE700779406 /* GuidePage */ = {
 			isa = PBXGroup;
 			children = (
+				E68A0CC81A246C460042B52E /* warning.png */,
 				E68278E41A2307EC00779406 /* Icon_Navition.png */,
 				E68278E21A23040E00779406 /* call.png */,
 				E68278E01A23004600779406 /* lose.png */,
@@ -661,6 +664,7 @@
 				E68278D91A22D40000779406 /* PanelOfGuide.xib in Resources */,
 				E68278F11A23159F00779406 /* Map_Following.png in Resources */,
 				E6BA55361A2178590015AD1D /* location_start@2x.png in Resources */,
+				E68A0CC91A246C460042B52E /* warning.png in Resources */,
 				E68278D11A22D3DC00779406 /* ForkImage.png in Resources */,
 				E6A97FC319FFBB6A00FA060A /* NZAlertView-Icons.bundle in Resources */,
 				E68278E31A23040E00779406 /* call.png in Resources */,

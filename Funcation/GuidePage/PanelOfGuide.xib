@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,44 +12,60 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Toronto, ON.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-wS-vjc">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iq-bR-uag">
-                    <rect key="frame" x="490" y="60" width="60" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning.png" translatesAutoresizingMaskIntoConstraints="NO" id="LCO-wX-RmN">
+                    <rect key="frame" x="70" y="70" width="130" height="130"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="VmF-oh-LLk"/>
-                        <constraint firstAttribute="height" constant="21" id="euU-y4-liw"/>
+                        <constraint firstAttribute="width" constant="130" id="KsR-3O-gXi"/>
+                        <constraint firstAttribute="width" secondItem="LCO-wX-RmN" secondAttribute="height" multiplier="1:1" id="wkf-GH-DkC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记路" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iq-bR-uag">
+                    <rect key="frame" x="240" y="91" width="70" height="42"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <color key="textColor" red="0.29848326289999999" green="0.16558752530000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="介绍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-Qi-dRN">
-                    <rect key="frame" x="499" y="102" width="34" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-KE-nCo">
+                    <rect key="frame" x="70" y="230" width="60" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.1393600196" blue="0.13311679360000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本软件在户内使用由于GPS 问题可能定位有所不准，请见谅！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMw-TU-7D5">
+                    <rect key="frame" x="68" y="262" width="465" height="42"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="34" id="WDQ-z4-qrb"/>
-                        <constraint firstAttribute="height" constant="21" id="Y4d-4h-esX"/>
+                        <constraint firstAttribute="height" constant="42" id="bKw-zv-C1L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.1393600196" blue="0.13311679360000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所以：为了提高 GPS 定位准确性，请尽量在户外使用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBI-nF-Ujs">
+                    <rect key="frame" x="99" y="312" width="402" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="Pa9-7d-eeR"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="0.93113664292967402" blue="0.62243818226945202" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="QBv-wS-vjc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Dw-eZ-Ydq"/>
-                <constraint firstAttribute="trailing" secondItem="8iq-bR-uag" secondAttribute="trailing" constant="50" id="7JN-Dl-sbA"/>
-                <constraint firstAttribute="bottom" secondItem="QBv-wS-vjc" secondAttribute="bottom" id="KDO-lV-gJD"/>
-                <constraint firstItem="8iq-bR-uag" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="Sxh-V1-QEm"/>
-                <constraint firstItem="Y1u-Qi-dRN" firstAttribute="top" secondItem="8iq-bR-uag" secondAttribute="bottom" constant="21" id="V8d-9Q-94o"/>
-                <constraint firstAttribute="trailing" secondItem="Y1u-Qi-dRN" secondAttribute="trailing" constant="67" id="Vte-7O-O4R"/>
-                <constraint firstItem="QBv-wS-vjc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZyZ-9W-e9F"/>
-                <constraint firstAttribute="trailing" secondItem="QBv-wS-vjc" secondAttribute="trailing" id="jZV-7Q-Gch"/>
+                <constraint firstAttribute="centerX" secondItem="bBI-nF-Ujs" secondAttribute="centerX" id="20Q-Ae-IjY"/>
+                <constraint firstItem="hFL-KE-nCo" firstAttribute="top" secondItem="LCO-wX-RmN" secondAttribute="bottom" constant="30" id="Dps-Ee-uSM"/>
+                <constraint firstItem="hFL-KE-nCo" firstAttribute="leading" secondItem="gMw-TU-7D5" secondAttribute="leading" constant="2" id="M5A-bv-7uI"/>
+                <constraint firstItem="8iq-bR-uag" firstAttribute="leading" secondItem="LCO-wX-RmN" secondAttribute="trailing" constant="40" id="SrP-mI-lf3"/>
+                <constraint firstItem="8iq-bR-uag" firstAttribute="top" secondItem="LCO-wX-RmN" secondAttribute="top" constant="21" id="XNq-MT-oSy"/>
+                <constraint firstItem="LCO-wX-RmN" firstAttribute="leading" secondItem="hFL-KE-nCo" secondAttribute="trailing" constant="-60" id="Y7f-8x-TcF"/>
+                <constraint firstItem="bBI-nF-Ujs" firstAttribute="top" secondItem="gMw-TU-7D5" secondAttribute="bottom" constant="8" id="nCR-Ds-f7l"/>
+                <constraint firstItem="LCO-wX-RmN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="q26-Pg-gnI"/>
+                <constraint firstItem="gMw-TU-7D5" firstAttribute="top" secondItem="hFL-KE-nCo" secondAttribute="bottom" constant="8" id="syP-EL-3Zn"/>
+                <constraint firstItem="LCO-wX-RmN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="uwW-bn-Yjh"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="Toronto, ON.jpg" width="2500" height="1667"/>
+        <image name="warning.png" width="128" height="128"/>
     </resources>
 </document>
