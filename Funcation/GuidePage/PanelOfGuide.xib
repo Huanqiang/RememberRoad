@@ -12,60 +12,65 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="panle3_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="thd-14-Tcv">
+                    <rect key="frame" x="0.0" y="0.0" width="609" height="600"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning.png" translatesAutoresizingMaskIntoConstraints="NO" id="LCO-wX-RmN">
-                    <rect key="frame" x="70" y="70" width="130" height="130"/>
+                    <rect key="frame" x="20" y="70" width="130" height="130"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="KsR-3O-gXi"/>
                         <constraint firstAttribute="width" secondItem="LCO-wX-RmN" secondAttribute="height" multiplier="1:1" id="wkf-GH-DkC"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记路" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iq-bR-uag">
-                    <rect key="frame" x="240" y="91" width="70" height="42"/>
+                    <rect key="frame" x="190" y="91" width="70" height="42"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                    <color key="textColor" red="0.29848326289999999" green="0.16558752530000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-KE-nCo">
-                    <rect key="frame" x="70" y="230" width="60" height="24"/>
+                    <rect key="frame" x="40" y="230" width="60" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="1" green="0.1393600196" blue="0.13311679360000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本软件在户内使用由于GPS 问题可能定位有所不准，请见谅！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMw-TU-7D5">
-                    <rect key="frame" x="68" y="262" width="465" height="42"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本软件在户内使用由于GPS 问题可能定位有所不准，请见谅！" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMw-TU-7D5">
+                    <rect key="frame" x="35" y="262" width="530" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="42" id="bKw-zv-C1L"/>
+                        <constraint firstAttribute="height" constant="44" id="bKw-zv-C1L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所以：为了提高 GPS 定位准确性，请尽量在户外使用" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBI-nF-Ujs">
+                    <rect key="frame" x="20" y="326" width="560" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Pa9-7d-eeR"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="0.1393600196" blue="0.13311679360000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所以：为了提高 GPS 定位准确性，请尽量在户外使用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBI-nF-Ujs">
-                    <rect key="frame" x="99" y="312" width="402" height="42"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="Pa9-7d-eeR"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.93113664292967402" blue="0.62243818226945202" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="bBI-nF-Ujs" secondAttribute="centerX" id="20Q-Ae-IjY"/>
                 <constraint firstItem="hFL-KE-nCo" firstAttribute="top" secondItem="LCO-wX-RmN" secondAttribute="bottom" constant="30" id="Dps-Ee-uSM"/>
-                <constraint firstItem="hFL-KE-nCo" firstAttribute="leading" secondItem="gMw-TU-7D5" secondAttribute="leading" constant="2" id="M5A-bv-7uI"/>
+                <constraint firstAttribute="trailing" secondItem="gMw-TU-7D5" secondAttribute="trailing" constant="35" id="LyE-Ng-12W"/>
+                <constraint firstItem="bBI-nF-Ujs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Ocb-f5-ZXE"/>
                 <constraint firstItem="8iq-bR-uag" firstAttribute="leading" secondItem="LCO-wX-RmN" secondAttribute="trailing" constant="40" id="SrP-mI-lf3"/>
                 <constraint firstItem="8iq-bR-uag" firstAttribute="top" secondItem="LCO-wX-RmN" secondAttribute="top" constant="21" id="XNq-MT-oSy"/>
-                <constraint firstItem="LCO-wX-RmN" firstAttribute="leading" secondItem="hFL-KE-nCo" secondAttribute="trailing" constant="-60" id="Y7f-8x-TcF"/>
-                <constraint firstItem="bBI-nF-Ujs" firstAttribute="top" secondItem="gMw-TU-7D5" secondAttribute="bottom" constant="8" id="nCR-Ds-f7l"/>
+                <constraint firstItem="LCO-wX-RmN" firstAttribute="leading" secondItem="hFL-KE-nCo" secondAttribute="trailing" constant="-80" id="Y7f-8x-TcF"/>
+                <constraint firstItem="bBI-nF-Ujs" firstAttribute="top" secondItem="gMw-TU-7D5" secondAttribute="bottom" constant="20" id="nCR-Ds-f7l"/>
+                <constraint firstItem="gMw-TU-7D5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="o8O-Gx-GOp"/>
+                <constraint firstAttribute="trailing" secondItem="bBI-nF-Ujs" secondAttribute="trailing" constant="20" id="ozg-1D-NoS"/>
                 <constraint firstItem="LCO-wX-RmN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="q26-Pg-gnI"/>
                 <constraint firstItem="gMw-TU-7D5" firstAttribute="top" secondItem="hFL-KE-nCo" secondAttribute="bottom" constant="8" id="syP-EL-3Zn"/>
-                <constraint firstItem="LCO-wX-RmN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="uwW-bn-Yjh"/>
+                <constraint firstItem="LCO-wX-RmN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uwW-bn-Yjh"/>
             </constraints>
         </view>
     </objects>
     <resources>
+        <image name="panle3_2.png" width="480" height="300"/>
         <image name="warning.png" width="128" height="128"/>
     </resources>
 </document>

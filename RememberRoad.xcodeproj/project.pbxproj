@@ -51,6 +51,9 @@
 		E68402001A21BE600045652B /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E68401FC1A21BE600045652B /* UIAlertView+Blocks.m */; };
 		E68A0CC71A2467BA0042B52E /* CallWIthOneKeyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */; };
 		E68A0CC91A246C460042B52E /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CC81A246C460042B52E /* warning.png */; };
+		E68A0CCE1A247BA90042B52E /* panle3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CCC1A247BA90042B52E /* panle3_1.png */; };
+		E68A0CCF1A247BA90042B52E /* panle3.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CCD1A247BA90042B52E /* panle3.png */; };
+		E68A0CD11A247C440042B52E /* panle3_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CD01A247C440042B52E /* panle3_2.png */; };
 		E694E1091A24266D00A11391 /* perple_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E1081A24266D00A11391 /* perple_walk.png */; };
 		E694E10B1A2431C700A11391 /* LocationAnnotation.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E10A1A2431C700A11391 /* LocationAnnotation.png */; };
 		E69BC2AF1A2210F200B0D17B /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = E69BC2AC1A2210F200B0D17B /* ChineseString.m */; };
@@ -61,7 +64,6 @@
 		E6A97F3F19FFB35400FA060A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A97F3E19FFB35400FA060A /* ViewController.swift */; };
 		E6A97F4219FFB35400FA060A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A97F4019FFB35400FA060A /* Main.storyboard */; };
 		E6A97F4419FFB35400FA060A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A97F4319FFB35400FA060A /* Images.xcassets */; };
-		E6A97F4719FFB35400FA060A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A97F4519FFB35400FA060A /* LaunchScreen.xib */; };
 		E6A97F5319FFB35400FA060A /* RememberRoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A97F5219FFB35400FA060A /* RememberRoadTests.swift */; };
 		E6A97FBF19FFBB6A00FA060A /* CoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A97FA419FFBB6A00FA060A /* CoreDataOperation.swift */; };
 		E6A97FC019FFBB6A00FA060A /* DetectionNetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A97FA719FFBB6A00FA060A /* DetectionNetworkStatus.m */; };
@@ -150,6 +152,9 @@
 		E68401FC1A21BE600045652B /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallWIthOneKeyClass.swift; sourceTree = "<group>"; };
 		E68A0CC81A246C460042B52E /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warning.png; path = Image/warning.png; sourceTree = "<group>"; };
+		E68A0CCC1A247BA90042B52E /* panle3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panle3_1.png; path = Image/panle3_1.png; sourceTree = "<group>"; };
+		E68A0CCD1A247BA90042B52E /* panle3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panle3.png; path = Image/panle3.png; sourceTree = "<group>"; };
+		E68A0CD01A247C440042B52E /* panle3_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panle3_2.png; path = Image/panle3_2.png; sourceTree = "<group>"; };
 		E694E1081A24266D00A11391 /* perple_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perple_walk.png; path = Image/perple_walk.png; sourceTree = "<group>"; };
 		E694E10A1A2431C700A11391 /* LocationAnnotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LocationAnnotation.png; path = Image/LocationAnnotation.png; sourceTree = "<group>"; };
 		E69BC2AB1A2210F200B0D17B /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseString.h; path = GainAddressBook/ChineseString.h; sourceTree = "<group>"; };
@@ -164,7 +169,6 @@
 		E6A97F3E19FFB35400FA060A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6A97F4119FFB35400FA060A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6A97F4319FFB35400FA060A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E6A97F4619FFB35400FA060A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E6A97F4C19FFB35400FA060A /* RememberRoadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberRoadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A97F5119FFB35400FA060A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A97F5219FFB35400FA060A /* RememberRoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberRoadTests.swift; sourceTree = "<group>"; };
@@ -326,6 +330,9 @@
 		E68278DB1A22FAE700779406 /* GuidePage */ = {
 			isa = PBXGroup;
 			children = (
+				E68A0CD01A247C440042B52E /* panle3_2.png */,
+				E68A0CCC1A247BA90042B52E /* panle3_1.png */,
+				E68A0CCD1A247BA90042B52E /* panle3.png */,
 				E68A0CC81A246C460042B52E /* warning.png */,
 				E68278E41A2307EC00779406 /* Icon_Navition.png */,
 				E68278E21A23040E00779406 /* call.png */,
@@ -432,7 +439,6 @@
 				E6A97F3919FFB35400FA060A /* AppDelegate.swift */,
 				E6A97F4019FFB35400FA060A /* Main.storyboard */,
 				E6A97F4319FFB35400FA060A /* Images.xcassets */,
-				E6A97F4519FFB35400FA060A /* LaunchScreen.xib */,
 				E6A97F3719FFB35400FA060A /* Supporting Files */,
 			);
 			path = RememberRoad;
@@ -663,8 +669,11 @@
 				E6BA55351A2178590015AD1D /* location_start.png in Resources */,
 				E68278D91A22D40000779406 /* PanelOfGuide.xib in Resources */,
 				E68278F11A23159F00779406 /* Map_Following.png in Resources */,
+				E68A0CCF1A247BA90042B52E /* panle3.png in Resources */,
+				E68A0CCE1A247BA90042B52E /* panle3_1.png in Resources */,
 				E6BA55361A2178590015AD1D /* location_start@2x.png in Resources */,
 				E68A0CC91A246C460042B52E /* warning.png in Resources */,
+				E68A0CD11A247C440042B52E /* panle3_2.png in Resources */,
 				E68278D11A22D3DC00779406 /* ForkImage.png in Resources */,
 				E6A97FC319FFBB6A00FA060A /* NZAlertView-Icons.bundle in Resources */,
 				E68278E31A23040E00779406 /* call.png in Resources */,
@@ -689,7 +698,6 @@
 				E694E1091A24266D00A11391 /* perple_walk.png in Resources */,
 				E68278F01A23159F00779406 /* Map_compass@2x.png in Resources */,
 				E6BA55331A2178590015AD1D /* location_end.png in Resources */,
-				E6A97F4719FFB35400FA060A /* LaunchScreen.xib in Resources */,
 				E68278ED1A23159F00779406 /* Map_ChangedMapType1.png in Resources */,
 				E6A97F4419FFB35400FA060A /* Images.xcassets in Resources */,
 				E6BA55341A2178590015AD1D /* location_end@2x.png in Resources */,
@@ -773,14 +781,6 @@
 				E6A97F4119FFB35400FA060A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E6A97F4519FFB35400FA060A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6A97F4619FFB35400FA060A /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -30,13 +30,13 @@ static CreateBlurIntroductionPlanels *instnce;
     MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) title:@"一键拨打" description:@"\n\n快设置的你最亲密的联系人吧，可以一键 call 哟!\n\n注意只能设置一次，所以要慎重考虑呢！" image:[UIImage imageNamed:@"call.png"]];
     
     //Create Panel From Nib
-//    MYIntroductionPanel *panel3 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) nibNamed:@"PanelOfGuide"];
+    MYIntroductionPanel *panel3 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) nibNamed:@"PanelOfGuide"];
     
     //Create custom panel with events
     //    MYCustomPanel *panel4 = [[MYCustomPanel alloc] initWithFrame:CGRectMake(0, 0, width, height) nibNamed:@"MYCustomPanel"];
     
     //Add panels to an array
-    NSArray *panels = @[panel1, panel2];
+    NSArray *panels = @[panel1, panel2, panel3];
     
     return panels;
 }
