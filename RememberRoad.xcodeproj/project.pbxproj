@@ -11,6 +11,8 @@
 		E63EDEC01A10B3EA00DC8C57 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEBE1A10B3EA00DC8C57 /* CLLocation+YCLocation.m */; };
 		E63EDEC11A10B3EA00DC8C57 /* CustomLoction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEBF1A10B3EA00DC8C57 /* CustomLoction.swift */; };
 		E63EDEC31A10C3E300DC8C57 /* WayPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEC21A10C3E300DC8C57 /* WayPoint.swift */; };
+		E662F2991A26C49600C5F144 /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = E662F2981A26C49600C5F144 /* go.png */; };
+		E662F29B1A26C6B900C5F144 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = E662F29A1A26C6B900C5F144 /* stop.png */; };
 		E67578281A21AE1100B78F77 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = E67578261A21AE1100B78F77 /* phone.png */; };
 		E67578291A21AE1100B78F77 /* phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67578271A21AE1100B78F77 /* phone@2x.png */; };
 		E675782C1A21AF5000B78F77 /* LogInToolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E675782B1A21AF5000B78F77 /* LogInToolClass.swift */; };
@@ -54,7 +56,6 @@
 		E68A0CCE1A247BA90042B52E /* panle3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CCC1A247BA90042B52E /* panle3_1.png */; };
 		E68A0CCF1A247BA90042B52E /* panle3.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CCD1A247BA90042B52E /* panle3.png */; };
 		E68A0CD11A247C440042B52E /* panle3_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A0CD01A247C440042B52E /* panle3_2.png */; };
-		E694E1091A24266D00A11391 /* perple_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E1081A24266D00A11391 /* perple_walk.png */; };
 		E694E10B1A2431C700A11391 /* LocationAnnotation.png in Resources */ = {isa = PBXBuildFile; fileRef = E694E10A1A2431C700A11391 /* LocationAnnotation.png */; };
 		E69BC2AF1A2210F200B0D17B /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = E69BC2AC1A2210F200B0D17B /* ChineseString.m */; };
 		E69BC2B01A2210F200B0D17B /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = E69BC2AD1A2210F200B0D17B /* pinyin.c */; };
@@ -104,6 +105,8 @@
 		E63EDEBE1A10B3EA00DC8C57 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
 		E63EDEBF1A10B3EA00DC8C57 /* CustomLoction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoction.swift; sourceTree = "<group>"; };
 		E63EDEC21A10C3E300DC8C57 /* WayPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayPoint.swift; sourceTree = "<group>"; };
+		E662F2981A26C49600C5F144 /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = go.png; path = Image/go.png; sourceTree = "<group>"; };
+		E662F29A1A26C6B900C5F144 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop.png; path = Image/stop.png; sourceTree = "<group>"; };
 		E67578261A21AE1100B78F77 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = Image/phone.png; sourceTree = "<group>"; };
 		E67578271A21AE1100B78F77 /* phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "phone@2x.png"; path = "Image/phone@2x.png"; sourceTree = "<group>"; };
 		E675782B1A21AF5000B78F77 /* LogInToolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInToolClass.swift; path = CusLogInClass/LogInToolClass.swift; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 		E68A0CCC1A247BA90042B52E /* panle3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panle3_1.png; path = Image/panle3_1.png; sourceTree = "<group>"; };
 		E68A0CCD1A247BA90042B52E /* panle3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panle3.png; path = Image/panle3.png; sourceTree = "<group>"; };
 		E68A0CD01A247C440042B52E /* panle3_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panle3_2.png; path = Image/panle3_2.png; sourceTree = "<group>"; };
-		E694E1081A24266D00A11391 /* perple_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perple_walk.png; path = Image/perple_walk.png; sourceTree = "<group>"; };
 		E694E10A1A2431C700A11391 /* LocationAnnotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LocationAnnotation.png; path = Image/LocationAnnotation.png; sourceTree = "<group>"; };
 		E69BC2AB1A2210F200B0D17B /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseString.h; path = GainAddressBook/ChineseString.h; sourceTree = "<group>"; };
 		E69BC2AC1A2210F200B0D17B /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChineseString.m; path = GainAddressBook/ChineseString.m; sourceTree = "<group>"; };
@@ -344,8 +346,9 @@
 		E68278E61A23159200779406 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E662F29A1A26C6B900C5F144 /* stop.png */,
+				E662F2981A26C49600C5F144 /* go.png */,
 				E694E10A1A2431C700A11391 /* LocationAnnotation.png */,
-				E694E1081A24266D00A11391 /* perple_walk.png */,
 				E68278E71A23159F00779406 /* Map_ChangedMapType1.png */,
 				E68278E81A23159F00779406 /* Map_ChangedMapType2.png */,
 				E68278E91A23159F00779406 /* Map_compass.png */,
@@ -672,6 +675,7 @@
 				E68A0CCF1A247BA90042B52E /* panle3.png in Resources */,
 				E68A0CCE1A247BA90042B52E /* panle3_1.png in Resources */,
 				E6BA55361A2178590015AD1D /* location_start@2x.png in Resources */,
+				E662F2991A26C49600C5F144 /* go.png in Resources */,
 				E68A0CC91A246C460042B52E /* warning.png in Resources */,
 				E68A0CD11A247C440042B52E /* panle3_2.png in Resources */,
 				E68278D11A22D3DC00779406 /* ForkImage.png in Resources */,
@@ -695,7 +699,7 @@
 				E68278DA1A22D40000779406 /* PanelOfGuideHeader.xib in Resources */,
 				E67EA4401A208980004A9590 /* location.png in Resources */,
 				E67578281A21AE1100B78F77 /* phone.png in Resources */,
-				E694E1091A24266D00A11391 /* perple_walk.png in Resources */,
+				E662F29B1A26C6B900C5F144 /* stop.png in Resources */,
 				E68278F01A23159F00779406 /* Map_compass@2x.png in Resources */,
 				E6BA55331A2178590015AD1D /* location_end.png in Resources */,
 				E68278ED1A23159F00779406 /* Map_ChangedMapType1.png in Resources */,

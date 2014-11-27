@@ -43,22 +43,26 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-c4-Xyv">
-                                <rect key="frame" x="502" y="42" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-c4-Xyv">
+                                <rect key="frame" x="540" y="120" width="40" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="YS2-Nh-2dV"/>
-                                    <constraint firstAttribute="width" constant="60" id="wdo-bn-ICg"/>
+                                    <constraint firstAttribute="height" constant="50" id="YS2-Nh-2dV"/>
+                                    <constraint firstAttribute="width" constant="40" id="wdo-bn-ICg"/>
                                 </constraints>
-                                <state key="normal" title="开始走动">
+                                <state key="normal" image="go.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startWalkingOut:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kIP-R7-lYU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVM-J2-rn1">
-                                <rect key="frame" x="502" y="92" width="60" height="30"/>
-                                <state key="normal" title="停止走动">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVM-J2-rn1">
+                                <rect key="frame" x="540" y="185" width="40" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XVM-J2-rn1" secondAttribute="height" multiplier="4:5" id="QiQ-9g-IiR"/>
+                                    <constraint firstAttribute="width" constant="40" id="occ-u3-rRJ"/>
+                                </constraints>
+                                <state key="normal" image="stop.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -86,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMM-10-djB">
-                                <rect key="frame" x="540" y="142" width="40" height="40"/>
+                                <rect key="frame" x="540" y="250" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="e1J-Vn-74B"/>
                                     <constraint firstAttribute="width" secondItem="nMM-10-djB" secondAttribute="height" multiplier="1:1" id="kWm-af-Rf1"/>
@@ -105,16 +109,16 @@
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="4F0-ed-n3h"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b0E-3R-36P" secondAttribute="bottom" constant="20" id="BvF-2a-vac"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GSd-bS-4db"/>
-                            <constraint firstItem="nMM-10-djB" firstAttribute="top" secondItem="XVM-J2-rn1" secondAttribute="bottom" constant="20" id="Hgt-6t-Yyb"/>
-                            <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="22" id="Neo-6S-AhV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nMM-10-djB" secondAttribute="trailing" constant="4" id="POj-sF-vop"/>
+                            <constraint firstItem="nMM-10-djB" firstAttribute="top" secondItem="XVM-J2-rn1" secondAttribute="bottom" constant="15" id="Hgt-6t-Yyb"/>
+                            <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="Neo-6S-AhV"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="VTK-ls-BY2"/>
+                            <constraint firstItem="nMM-10-djB" firstAttribute="leading" secondItem="XVM-J2-rn1" secondAttribute="leading" id="Zmm-pJ-MsJ"/>
                             <constraint firstItem="b0E-3R-36P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bXg-SH-Uk9"/>
-                            <constraint firstItem="XVM-J2-rn1" firstAttribute="top" secondItem="F0d-c4-Xyv" secondAttribute="bottom" constant="20" id="gem-Ff-asF"/>
+                            <constraint firstItem="XVM-J2-rn1" firstAttribute="top" secondItem="F0d-c4-Xyv" secondAttribute="bottom" constant="15" id="gem-Ff-asF"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="leading" secondItem="F0d-c4-Xyv" secondAttribute="leading" id="hsy-RS-ZTu"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="S4r-AS-cvS" secondAttribute="bottom" id="qqH-Ka-zeL"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="sXi-qw-1fs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F0d-c4-Xyv" secondAttribute="trailing" constant="22" id="tao-iJ-3et"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F0d-c4-Xyv" secondAttribute="trailing" constant="4" id="tao-iJ-3et"/>
                         </constraints>
                     </view>
                     <connections>
@@ -210,7 +214,9 @@
     </scenes>
     <resources>
         <image name="Map_ChangedMapType2.png" width="50" height="50"/>
+        <image name="go.png" width="108" height="134"/>
         <image name="location.png" width="128" height="128"/>
         <image name="phone.png" width="64" height="64"/>
+        <image name="stop.png" width="108" height="134"/>
     </resources>
 </document>
