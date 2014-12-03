@@ -26,7 +26,7 @@ class AddCusAnnotation: NSObject, MKMapViewDelegate {
     
     //定义类方法
     class func shareInstance(delegate: MKMapViewDelegate) -> AddCusAnnotation{
-        struct netSingle{
+        struct netSingle {
             static var predicate: dispatch_once_t = 0
             static var instance: AddCusAnnotation? = nil
         }

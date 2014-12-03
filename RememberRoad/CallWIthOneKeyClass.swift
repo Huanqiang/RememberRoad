@@ -47,7 +47,8 @@ class CallWIthOneKeyClass: NSObject {
         actionView.addButton(cancelItem, type: RIButtonItemType_Cancel)
         
         let okItem: RIButtonItem = RIButtonItem.itemWithLabel("确定", action: {
-            CusToolClass.shareInstance().openWebURL("tel://\(phoneNumber)")
+            let phone: NSString = "tel://\(phoneNumber)"
+            phone.openURL()
         }) as RIButtonItem
         actionView.addButton(okItem, type: RIButtonItemType_Destructive)
         
