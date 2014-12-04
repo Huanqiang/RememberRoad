@@ -140,6 +140,7 @@
                         <outlet property="callBtn" destination="a9z-N7-Xro" id="2vN-5Q-hyy"/>
                         <outlet property="locationImageView" destination="b0E-3R-36P" id="Mhs-fT-K7Y"/>
                         <outlet property="mainMapView" destination="S4r-AS-cvS" id="bRJ-PZ-qDK"/>
+                        <outlet property="settingBtn" destination="OqW-X5-LA2" id="IL0-yp-ZiD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

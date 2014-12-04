@@ -13,3 +13,8 @@
 // AFNetWorking
 #import "UIKit+AFNetworking.h"
 #import "AFNetworking.h"
+
+// GADBannerView
+#import "GADBannerView.h"
+#import "GADInterstitialDelegate.h"
+#import "GADInterstitial.h"

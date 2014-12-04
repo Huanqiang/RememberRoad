@@ -9,10 +9,12 @@
 import UIKit
 import MapKit
 import CoreLocation
+import iAd
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, ADBannerViewDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var callBtn: UIButton!
+    @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var mainMapView: MKMapView!
     var mapOperation: MapOperation = MapOperation.shareInstance()
@@ -25,6 +27,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var walkTimer: NSTimer = NSTimer()
     var routeLine: MKPolyline = MKPolyline()
     var locationAnnotation: CusAnnotation?
+    
+    // AD
+    var iAdSupported = false
+    var iAdView:ADBannerView?
+    var bannerView:GADBannerView?
+    var statusbarHeight:CGFloat = 0.0
     
     
     override func viewDidLoad() {
@@ -42,6 +50,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         // 创建 定位服务
         self.startLocation()
+        
+        self.createAd()
     }
 
     override func didReceiveMemoryWarning() {
@@ -238,5 +248,114 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func createAlertView(style: NZAlertStyle,title: String, msg: String) {
         var alert: NZAlertView = NZAlertView(style: style, title: title, message: msg, delegate: self)
         alert.show();
+    }
+    
+    // MARK: - 广告
+    
+    // 创建广告
+    func createAd() {
+        iAdSupported = iAdTimeZoneSupported()
+        
+        if iAdSupported {
+            iAdView = ADBannerView(adType: ADAdType.Banner)
+            iAdView?.frame = CGRectMake(0, 0 - iAdView!.frame.height, iAdView!.frame.width, iAdView!.frame.height)
+            statusbarHeight = self.view.frame.size.height - iAdView!.frame.height
+            iAdView?.delegate = self
+            self.view.addSubview(iAdView!)
+            
+        } else {
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            bannerView?.adUnitID = "ca-app-pub-3724477525755491/7721017568"
+            statusbarHeight = self.view.frame.size.height - bannerView!.frame.height
+            bannerView?.frame.size.width = self.view.frame.size.width
+            bannerView?.delegate = self
+            bannerView?.rootViewController = self
+            self.view.addSubview(bannerView!)
+            bannerView?.loadRequest(GADRequest())
+        }
+
+    }
+    
+    // 重画框架
+    func relayoutViews() {
+        var bannerFrame = iAdSupported ? iAdView!.frame : bannerView!.frame
+        bannerFrame.origin.x = 0
+        bannerFrame.origin.y = statusbarHeight
+        if iAdSupported {
+            iAdView!.frame = bannerFrame
+        } else {
+            bannerView!.frame = bannerFrame
+        }
+        
+        self.mainMapView.frame.size.height = self.view.frame.size.height - bannerFrame.size.height
+        self.settingBtn.frame.size.height = self.view.frame.size.height - bannerFrame.size.height
+    }
+    
+    // MARK: - iAd
+    
+    // iAd func 判断该地区支不支持 iAd
+    func iAdTimeZoneSupported()->Bool {
+        let iAdTimeZones = "America/;US/;Pacific/;Asia/Tokyo;Europe/".componentsSeparatedByString(";")
+        var myTimeZone = NSTimeZone.localTimeZone().name
+        for zone in iAdTimeZones {
+            if (myTimeZone.hasPrefix(zone)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    // iAdBannerViewDelegate
+    func bannerViewWillLoadAd(banner: ADBannerView!) {
+        println("bannerViewWillLoadAd")
+    }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        println("bannerViewDidLoadAd")
+        relayoutViews()
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        println("didFailToReceiveAd error:\(error)")
+        relayoutViews()
+    }
+    
+    func bannerViewActionDidFinish(banner: ADBannerView!) {
+        println("bannerViewActionDidFinish")
+        relayoutViews()
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        println("bannerViewActionShouldBegin")
+        return true;
+    }
+
+    // MARK: - GADBannerView
+    
+    // GADBannerViewDelegate
+    func adViewDidReceiveAd(view: GADBannerView!) {
+        println("adViewDidReceiveAd:\(view)");
+        relayoutViews()
+    }
+    
+    func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        println("\(view) error:\(error)")
+        relayoutViews()
+    }
+    
+    func adViewWillPresentScreen(adView: GADBannerView!) {
+        println("adViewWillPresentScreen:\(adView)")
+        relayoutViews()
+    }
+    
+    func adViewWillLeaveApplication(adView: GADBannerView!) {
+        println("adViewWillLeaveApplication:\(adView)")
+        relayoutViews()
+    }
+    
+    func adViewWillDismissScreen(adView: GADBannerView!) {
+        println("adViewWillDismissScreen:\(adView)")
+        relayoutViews()
     }
 }
