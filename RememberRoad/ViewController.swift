@@ -61,7 +61,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     // MARK: - 地图服务
     func setCustonMap() {
-        self.mainMapView.mapType = .Satellite
+        self.mainMapView.mapType = .Standard
     }
     
     // 设置地图的显示范围
@@ -213,12 +213,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var btn: UIButton = sender as UIButton
         if btn.tag == 1 {
             btn.tag = 2
-            self.mainMapView.mapType = .Standard
-            btn.setImage(UIImage(named: "Map_ChangedMapType1"), forState: .Normal)
-        }else {
-            btn.tag = 1
             self.mainMapView.mapType = .Satellite
             btn.setImage(UIImage(named: "Map_ChangedMapType2"), forState: .Normal)
+        }else {
+            btn.tag = 1
+            self.mainMapView.mapType = .Standard
+            btn.setImage(UIImage(named: "Map_ChangedMapType1"), forState: .Normal)
         }
     }
     
@@ -265,9 +265,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
         } else {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            bannerView?.adUnitID = "ca-app-pub-3724477525755491/7721017568"
-            statusbarHeight = self.view.frame.size.height - bannerView!.frame.height
-            bannerView?.frame.size.width = self.view.frame.size.width
+            bannerView?.adUnitID = "ca-app-pub-3724477525755491/7721017568"    // 设置 AdMob 的广告 ID
+            statusbarHeight = self.view.frame.size.height - bannerView!.frame.height   // 设置 banner 的 y 轴位置
+            bannerView?.frame.size.width = self.view.frame.size.width          // 设置 bannerView 的宽度，以应对不同尺寸的手机屏幕
             bannerView?.delegate = self
             bannerView?.rootViewController = self
             self.view.addSubview(bannerView!)
@@ -276,7 +276,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     }
     
-    // 重画框架
+    // 重画 banner 视图
     func relayoutViews() {
         var bannerFrame = iAdSupported ? iAdView!.frame : bannerView!.frame
         bannerFrame.origin.x = 0
@@ -287,6 +287,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             bannerView!.frame = bannerFrame
         }
         
+        // 使原来的视图高度减少一个 banner 的高度，或者上移一个 banner 的高度
         self.mainMapView.frame.size.height = self.view.frame.size.height - bannerFrame.size.height
         self.settingBtn.frame.size.height = self.view.frame.size.height - bannerFrame.size.height
     }
@@ -318,12 +319,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
         println("didFailToReceiveAd error:\(error)")
-        relayoutViews()
+        relayoutViews()   // 重画框架
     }
     
     func bannerViewActionDidFinish(banner: ADBannerView!) {
         println("bannerViewActionDidFinish")
-        relayoutViews()
+        relayoutViews()   // 重画框架
     }
     
     func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {

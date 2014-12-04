@@ -95,7 +95,7 @@
                                     <constraint firstAttribute="width" constant="40" id="e1J-Vn-74B"/>
                                     <constraint firstAttribute="width" secondItem="nMM-10-djB" secondAttribute="height" multiplier="1:1" id="kWm-af-Rf1"/>
                                 </constraints>
-                                <state key="normal" image="Map_ChangedMapType2.png">
+                                <state key="normal" image="Map_ChangedMapType1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -366,7 +366,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Map_ChangedMapType2.png" width="50" height="50"/>
+        <image name="Map_ChangedMapType1.png" width="50" height="50"/>
         <image name="go_2.png" width="171" height="171"/>
         <image name="location.png" width="128" height="128"/>
         <image name="phone.png" width="64" height="64"/>
