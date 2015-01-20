@@ -15,6 +15,7 @@
 		E61F4ABD1A29BA4900845AD9 /* Launch_750.png in Resources */ = {isa = PBXBuildFile; fileRef = E61F4AB91A29BA4900845AD9 /* Launch_750.png */; };
 		E61F4ABE1A29BA4900845AD9 /* Launch_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = E61F4ABA1A29BA4900845AD9 /* Launch_1136.png */; };
 		E633917C1A6EA61800D8E999 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633917B1A6EA61800D8E999 /* AboutUsViewController.swift */; };
+		E633917E1A6EADF600D8E999 /* CalculationDistanceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633917D1A6EADF600D8E999 /* CalculationDistanceClass.swift */; };
 		E63EDEBB1A10B30000DC8C57 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63EDEBA1A10B30000DC8C57 /* MapKit.framework */; };
 		E63EDEC01A10B3EA00DC8C57 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEBE1A10B3EA00DC8C57 /* CLLocation+YCLocation.m */; };
 		E63EDEC11A10B3EA00DC8C57 /* CustomLoction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEBF1A10B3EA00DC8C57 /* CustomLoction.swift */; };
@@ -148,6 +149,7 @@
 		E61F4AB91A29BA4900845AD9 /* Launch_750.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Launch_750.png; path = Image/Launch_750.png; sourceTree = "<group>"; };
 		E61F4ABA1A29BA4900845AD9 /* Launch_1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Launch_1136.png; path = Image/Launch_1136.png; sourceTree = "<group>"; };
 		E633917B1A6EA61800D8E999 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		E633917D1A6EADF600D8E999 /* CalculationDistanceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationDistanceClass.swift; sourceTree = "<group>"; };
 		E63EDEBA1A10B30000DC8C57 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E63EDEBD1A10B3EA00DC8C57 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		E63EDEBE1A10B3EA00DC8C57 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 		E6A0D1511A13232200CCCFE7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E633917D1A6EADF600D8E999 /* CalculationDistanceClass.swift */,
 				E68A0CC61A2467BA0042B52E /* CallWIthOneKeyClass.swift */,
 				E6BA553B1A217ED90015AD1D /* AddCusAnnotation.swift */,
 				E6B288D71A14A7360053A845 /* CusMapOverlay.swift */,
@@ -941,6 +944,7 @@
 				E6A97FC119FFBB6A00FA060A /* Reachability.m in Sources */,
 				E6F314251A020EDA0003CA9F /* UserCoreDataManage.swift in Sources */,
 				E6A97FC019FFBB6A00FA060A /* DetectionNetworkStatus.m in Sources */,
+				E633917E1A6EADF600D8E999 /* CalculationDistanceClass.swift in Sources */,
 				E68401FE1A21BE600045652B /* RIButtonItem.m in Sources */,
 				E68401F31A21BD980045652B /* ShowAddressBookTableView.swift in Sources */,
 				E68401F01A21B9540045652B /* GainAddressBookClass.swift in Sources */,

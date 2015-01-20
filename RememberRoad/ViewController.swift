@@ -17,6 +17,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var mainMapView: MKMapView!
+    @IBOutlet weak var distanceBGView: UIView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    
     var mapOperation: MapOperation = MapOperation.shareInstance()
     var location: CustomLoction? = CustomLoction.shareInstance()
     var addCusAnnotattion: AddCusAnnotation!
@@ -71,7 +75,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         switch state {
             case "0" : msg = "请您打开手机流量，否则只能显示您的大概位置，不能显示定位"
             case "1" : msg = ""
-            case "2" : msg = "您正处于 WIFI 网络，不能准群定位，请使用手机流量"
+            case "2" : msg = "您正处于 WIFI 网络，不能准确定位，请使用手机流量"
             default : msg = ""
         }
         
@@ -248,9 +252,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         coordinateArray = nil;
     }
     
-    // 添加标注
+    // 添加开始/结束标注
     func addAnnotation(subTitle: String,coordinate: CLLocationCoordinate2D) {
         addCusAnnotattion.createAnnotation(mainMapView, title: "标注", subTitle: subTitle, coordinate: coordinate)
+    }
+    
+    
+    // 计算用户行走距离
+    func showUserDistance(locations: [UserWayPoint]) {
+        
+    }
+    
+    func calculationDistance(locations: [UserWayPoint]) -> CGFloat {
+        return 1;
     }
 
 // MARK: - 此处有问题

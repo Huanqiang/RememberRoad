@@ -109,6 +109,24 @@
                                     <segue destination="jcu-bg-vsx" kind="showDetail" id="ljP-ke-rwp"/>
                                 </connections>
                             </button>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7r-Rp-KEt">
+                                <rect key="frame" x="68" y="28" width="512" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已经行走了 M 米" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="LNv-84-rrG">
+                                        <rect key="frame" x="0.0" y="11" width="512" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.084625761047759207" green="0.66502225703412687" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15598285551789959" green="0.78354284111648675" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="9gP-Bl-Odn"/>
+                                    <constraint firstItem="LNv-84-rrG" firstAttribute="leading" secondItem="F7r-Rp-KEt" secondAttribute="leading" id="qMz-9D-h4r"/>
+                                    <constraint firstAttribute="trailing" secondItem="LNv-84-rrG" secondAttribute="trailing" id="s0c-lD-0Mx"/>
+                                    <constraint firstAttribute="centerY" secondItem="LNv-84-rrG" secondAttribute="centerY" id="vyO-BS-RM2"/>
+                                </constraints>
+                            </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
@@ -121,16 +139,19 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OqW-X5-LA2" secondAttribute="bottom" constant="20" id="141-ls-FEa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S4r-AS-cvS" secondAttribute="trailing" constant="-16" id="3Qr-YL-Gti"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="4F0-ed-n3h"/>
+                            <constraint firstItem="F7r-Rp-KEt" firstAttribute="leading" secondItem="a9z-N7-Xro" secondAttribute="trailing" constant="8" id="9Gc-9v-Xsm"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b0E-3R-36P" secondAttribute="bottom" constant="20" id="BvF-2a-vac"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GSd-bS-4db"/>
                             <constraint firstItem="nMM-10-djB" firstAttribute="top" secondItem="XVM-J2-rn1" secondAttribute="bottom" constant="15" id="Hgt-6t-Yyb"/>
                             <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="Neo-6S-AhV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="4" id="QQs-fs-P6a"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="VTK-ls-BY2"/>
                             <constraint firstItem="nMM-10-djB" firstAttribute="leading" secondItem="XVM-J2-rn1" secondAttribute="leading" id="Zmm-pJ-MsJ"/>
                             <constraint firstItem="b0E-3R-36P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bXg-SH-Uk9"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="top" secondItem="F0d-c4-Xyv" secondAttribute="bottom" constant="15" id="gem-Ff-asF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OqW-X5-LA2" secondAttribute="trailing" constant="4" id="hi3-eI-S7W"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="leading" secondItem="F0d-c4-Xyv" secondAttribute="leading" id="hsy-RS-ZTu"/>
+                            <constraint firstItem="F7r-Rp-KEt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ixe-Wg-m1v"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="S4r-AS-cvS" secondAttribute="bottom" id="qqH-Ka-zeL"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="sXi-qw-1fs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F0d-c4-Xyv" secondAttribute="trailing" constant="4" id="tao-iJ-3et"/>
@@ -138,6 +159,8 @@
                     </view>
                     <connections>
                         <outlet property="callBtn" destination="a9z-N7-Xro" id="2vN-5Q-hyy"/>
+                        <outlet property="distanceBGView" destination="F7r-Rp-KEt" id="c4t-ik-g9P"/>
+                        <outlet property="distanceLabel" destination="LNv-84-rrG" id="eRU-qM-bSO"/>
                         <outlet property="locationImageView" destination="b0E-3R-36P" id="Mhs-fT-K7Y"/>
                         <outlet property="mainMapView" destination="S4r-AS-cvS" id="bRJ-PZ-qDK"/>
                         <outlet property="settingBtn" destination="OqW-X5-LA2" id="IL0-yp-ZiD"/>
