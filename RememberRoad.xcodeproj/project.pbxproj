@@ -14,6 +14,7 @@
 		E61F4ABC1A29BA4900845AD9 /* Launch_ 1242.png in Resources */ = {isa = PBXBuildFile; fileRef = E61F4AB81A29BA4900845AD9 /* Launch_ 1242.png */; };
 		E61F4ABD1A29BA4900845AD9 /* Launch_750.png in Resources */ = {isa = PBXBuildFile; fileRef = E61F4AB91A29BA4900845AD9 /* Launch_750.png */; };
 		E61F4ABE1A29BA4900845AD9 /* Launch_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = E61F4ABA1A29BA4900845AD9 /* Launch_1136.png */; };
+		E633917C1A6EA61800D8E999 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633917B1A6EA61800D8E999 /* AboutUsViewController.swift */; };
 		E63EDEBB1A10B30000DC8C57 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63EDEBA1A10B30000DC8C57 /* MapKit.framework */; };
 		E63EDEC01A10B3EA00DC8C57 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEBE1A10B3EA00DC8C57 /* CLLocation+YCLocation.m */; };
 		E63EDEC11A10B3EA00DC8C57 /* CustomLoction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63EDEBF1A10B3EA00DC8C57 /* CustomLoction.swift */; };
@@ -146,6 +147,7 @@
 		E61F4AB81A29BA4900845AD9 /* Launch_ 1242.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Launch_ 1242.png"; path = "Image/Launch_ 1242.png"; sourceTree = "<group>"; };
 		E61F4AB91A29BA4900845AD9 /* Launch_750.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Launch_750.png; path = Image/Launch_750.png; sourceTree = "<group>"; };
 		E61F4ABA1A29BA4900845AD9 /* Launch_1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Launch_1136.png; path = Image/Launch_1136.png; sourceTree = "<group>"; };
+		E633917B1A6EA61800D8E999 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		E63EDEBA1A10B30000DC8C57 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E63EDEBD1A10B3EA00DC8C57 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		E63EDEBE1A10B3EA00DC8C57 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				E6B7E34C1A2C0FFF004CA582 /* SettingViewController.swift */,
+				E633917B1A6EA61800D8E999 /* AboutUsViewController.swift */,
 			);
 			name = SettingViewController;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 				E68278D61A22D3DC00779406 /* MYIntroductionPanel.m in Sources */,
 				E6A97FC219FFBB6A00FA060A /* UIColor+StyleColor.m in Sources */,
 				E6A0D1531A13237B00CCCFE7 /* MapOperation.swift in Sources */,
+				E633917C1A6EA61800D8E999 /* AboutUsViewController.swift in Sources */,
 				E68A0CC71A2467BA0042B52E /* CallWIthOneKeyClass.swift in Sources */,
 				E6A97FC119FFBB6A00FA060A /* Reachability.m in Sources */,
 				E6F314251A020EDA0003CA9F /* UserCoreDataManage.swift in Sources */,

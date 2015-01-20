@@ -27,6 +27,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var walkTimer: NSTimer = NSTimer()
     var routeLine: MKPolyline = MKPolyline()
     var locationAnnotation: CusAnnotation?
+    var isNeedLocationAnnotation:Bool = true                      // NO:表示不需要添加定位标注，YES：表示需要
     
     // AD
     var iAdSupported = false
@@ -52,15 +53,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // 创建 定位服务
         self.startLocation()
         self.detectionNetState()
-        self.createAd()
+//        self.createAd()
     }
     
     override func viewDidAppear(animated: Bool) {
         // 当存在 横幅广告 时，重新加载各组建
-        if (hasADShow) {
-            self.relayoutViews()
-        }
-        hasADShow = true
+//        if (hasADShow) {
+//            self.relayoutViews()
+//        }
+//        hasADShow = true
     }
     
     // MARK: - 判断 APP 所处的网络状态以提醒用户
@@ -75,7 +76,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         
         if !msg.isEqualToString("") {
-            NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("createAlertView:"), userInfo: msg, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("createAlertView:"), userInfo: msg, repeats: false)
         }
     }
     
@@ -149,7 +150,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 self.wayPoint?.address = p.name
                 
                 //添加标注
-                self.addLoctionAnnotation(p.name, coordinate: newLocation.coordinate)
+                if self.isNeedLocationAnnotation {
+                    self.addLoctionAnnotation(p.name, coordinate: newLocation.coordinate)
+                }
+                
             }else{
                 println("No Placemarks!")
             }
@@ -166,11 +170,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
 
-    
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
         println(error)
     }
+
     
+    // MARK: - 新增标注
     func addLoctionAnnotation(title: String, coordinate: CLLocationCoordinate2D) {
         if (locationAnnotation != nil) {
             self.mainMapView.removeAnnotation(locationAnnotation)
@@ -183,6 +188,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     // MARK: - 开始外出走动
     @IBAction func startWalkingOut(sender: AnyObject) {
+        if locationAnnotation != nil {
+            self.isNeedLocationAnnotation = true
+        }
+        
         self.addCusAnnotattion.removeAnnotation(mainMapView)
         self.cusMapOverlay.removeAllOverlay(mainMapView)
         self.wayPoint?.state = 0
@@ -202,6 +211,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     // MARK: - 停止外出走动
     @IBAction func stopWalkingOut(sender: AnyObject) {
+        // 去除定位标注
+        if locationAnnotation != nil {
+            self.isNeedLocationAnnotation = false
+            self.mainMapView.removeAnnotation(locationAnnotation)
+        }
+        
         self.createAlertView(NZAlertStyle.Success, title: "结束记路", msg: "")
         self.locationImageView.hidden = true
         self.walkTimer.invalidate()

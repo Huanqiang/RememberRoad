@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="92m-UD-AUe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="92m-UD-AUe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -37,12 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
-                                </connections>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-c4-Xyv">
                                 <rect key="frame" x="540" y="120" width="40" height="40"/>
                                 <constraints>
@@ -115,6 +109,12 @@
                                     <segue destination="jcu-bg-vsx" kind="showDetail" id="ljP-ke-rwp"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -197,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="1016"/>
         </scene>
-        <!--View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="NwA-qq-Qjq">
             <objects>
-                <viewController id="YIE-iN-ZMO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YIE-iN-ZMO" customClass="AboutUsViewController" customModule="RememberRoad" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdM-A6-HFb"/>
                         <viewControllerLayoutGuide type="bottom" id="xga-pv-ecG"/>
@@ -209,7 +209,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-mG-QWX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-mG-QWX">
                                 <rect key="frame" x="240" y="20" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B6y-mG-QWX" secondAttribute="height" multiplier="1:1" id="0iJ-T1-REK"/>
@@ -228,7 +228,7 @@
                                     <constraint firstAttribute="height" constant="84" id="q0b-d1-bNG"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZdK-ff-CRq">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutUsCell" id="ZdK-ff-CRq">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZdK-ff-CRq" id="8Mb-Kb-twl">
@@ -237,7 +237,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014年 王焕强. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="68p-pV-qg2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014年 子叶. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="68p-pV-qg2">
                                 <rect key="frame" x="16" y="559" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nof-OJ-b9P"/>
@@ -349,7 +349,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xWx-TZ-2Qf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jcu-bg-vsx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jcu-bg-vsx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LKR-8E-MLW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -366,6 +366,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon_120.png" width="120" height="120"/>
         <image name="Map_ChangedMapType1.png" width="50" height="50"/>
         <image name="go_2.png" width="171" height="171"/>
         <image name="location.png" width="128" height="128"/>
