@@ -33,6 +33,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var iAdView:ADBannerView?
     var bannerView:GADBannerView?
     var statusbarHeight:CGFloat = 0.0
+    var hasADShow = false
     
     
     override func viewDidLoad() {
@@ -50,8 +51,42 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         // 创建 定位服务
         self.startLocation()
-        
+        self.detectionNetState()
         self.createAd()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // 当存在 横幅广告 时，重新加载各组建
+        if (hasADShow) {
+            self.relayoutViews()
+        }
+        hasADShow = true
+    }
+    
+    // MARK: - 判断 APP 所处的网络状态以提醒用户
+    func detectionNetState() {
+        let state:NSString = DetectionNetworkStatus.checkUpNetworkStatus()
+        var msg: NSString = "";
+        switch state {
+            case "0" : msg = "请您打开手机流量，否则只能显示您的大概位置，不能显示定位"
+            case "1" : msg = ""
+            case "2" : msg = "您正处于 WIFI 网络，不能准群定位，请使用手机流量"
+            default : msg = ""
+        }
+        
+        if !msg.isEqualToString("") {
+            NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("createAlertView:"), userInfo: msg, repeats: false)
+        }
+    }
+    
+    func createAlertView(timer: NSTimer) {
+        let msg:String = timer.userInfo as String
+        var alert:BOAlertController = BOAlertController(title: "抱歉", message: msg, subView: nil, viewController: self);
+        let okItem:RIButtonItem = RIButtonItem.itemWithLabel("好的", action: {
+            println("1")
+        }) as RIButtonItem
+        alert.addButton(okItem, type:RIButtonItemType_Other)
+        alert.show()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,10 +117,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         location?.stopLocation()
     }
     
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+//        <#code#>
+    }
+    
     // 获取 定位信息
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!){
-        var currLocation : CLLocation = locations.last as CLLocation
-        let newLocation:CLLocation = currLocation.locationMarsFromEarth();
+        let currLocation : CLLocation = locations.last as CLLocation
+        
+        var newLocation:CLLocation = currLocation.locationMarsFromEarth()
+        if self.isLocationInOfChina(currLocation.coordinate) {
+            newLocation = currLocation
+        }
         
         self.setCoordinateRegion(newLocation.coordinate)
         self.wayPoint?.latitude = newLocation.coordinate.latitude;
@@ -112,6 +155,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             }
         });
     }
+    
+    //判断是不是在中国
+    func isLocationInOfChina(location: CLLocationCoordinate2D) -> Bool {
+        if (location.longitude < 72.004 || location.longitude > 137.8347 || location.latitude < 0.8293 || location.latitude > 55.8271) {
+            return false;
+        }
+        return true;
+
+    }
+    
+
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
         println(error)
@@ -271,7 +325,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             bannerView?.delegate = self
             bannerView?.rootViewController = self
             self.view.addSubview(bannerView!)
-            bannerView?.loadRequest(GADRequest())
+            
+            var request:GADRequest = GADRequest();
+            request.testDevices = NSArray(objects: GAD_SIMULATOR_ID);
+            
+            bannerView?.loadRequest(request)
         }
 
     }
@@ -286,10 +344,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         } else {
             bannerView!.frame = bannerFrame
         }
-        
+
         // 使原来的视图高度减少一个 banner 的高度，或者上移一个 banner 的高度
-        self.mainMapView.frame.size.height = self.view.frame.size.height - bannerFrame.size.height
-        self.settingBtn.frame.size.height = self.view.frame.size.height - bannerFrame.size.height
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("relayoutMapView:"), userInfo: bannerFrame.size.height, repeats: false)
+    }
+    
+    func relayoutMapView(timer: NSTimer) {
+        let height:CGFloat = timer.userInfo as CGFloat
+        self.mainMapView.frame.size.height = self.view.frame.size.height - height
+        self.settingBtn.frame.origin.y = self.view.frame.size.height - height - self.settingBtn.frame.size.height - 20
     }
     
     // MARK: - iAd

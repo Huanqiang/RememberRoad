@@ -9,20 +9,7 @@
 #import "DetectionNetworkStatus.h"
 
 @implementation DetectionNetworkStatus
-static DetectionNetworkStatus *instnce;
 
-#pragma mark - 外部文件可以直接访问CustomToolClass内部函数
-+ (id)shareInstance {
-    if (instnce == nil) {
-        instnce = [[[self class] alloc] init];
-    }
-    return instnce;
-}
-
-/*
- 方法：检测网络的状态
- 返回值：0：没有网络连接；  1：使用3G网络；  2：使用WiFi网络；
- */
 + (NSString *)checkUpNetworkStatus {
     Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     NSString *networkStatus = @"";

@@ -11,21 +11,25 @@
 
 @interface DetectionNetworkStatus : NSObject
 
-#pragma mark - 外部文件可以直接访问CustomToolClass内部函数
-/*
- 方法：外部文件可以直接访问CustomToolClass内部函数
- */
-+ (id)shareInstance;
-
-/*
- 方法：检测网络的状态
- 返回值：0：没有网络连接；  1：使用3G网络；  2：使用WiFi网络；
+/**
+ *  检测网络的状态
+ *
+ *  @return 0：没有网络连接；  1：使用3G网络；  2：使用WiFi网络；
  */
 + (NSString *)checkUpNetworkStatus;
 
-// 是否为WIFI
+/**
+ *  是否为WIFI
+ *
+ *  @return true : WIFI 网络; false : 不是 WIFI 网络
+ */
 + (BOOL)isEnableWifi;
-// 是否3G
+
+/**
+ *  是否为3G
+ *
+ *  @return true : 3G 网络; false : 不是 3G 网络
+ */
 + (BOOL)isEnable3G;
 
 @end
