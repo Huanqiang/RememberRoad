@@ -20,20 +20,6 @@
                ReferencedContainer = "container:RememberRoad.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A97F4B19FFB35400FA060A"
-               BuildableName = "RememberRoadTests.xctest"
-               BlueprintName = "RememberRoadTests"
-               ReferencedContainer = "container:RememberRoad.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A97F4B19FFB35400FA060A"
-               BuildableName = "RememberRoadTests.xctest"
-               BlueprintName = "RememberRoadTests"
-               ReferencedContainer = "container:RememberRoad.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -82,14 +58,6 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
-<<<<<<< HEAD
-=======
-         <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </AdditionalOption>
->>>>>>> addAd
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
