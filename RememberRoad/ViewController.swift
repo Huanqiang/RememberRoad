@@ -33,20 +33,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var locationAnnotation: CusAnnotation?
     var isNeedLocationAnnotation:Bool = true                      // NO:表示不需要添加定位标注，YES：表示需要
     
-    // AD
-    var iAdSupported = false
-    var iAdView:ADBannerView?
-    var bannerView:GADBannerView?
-    var statusbarHeight:CGFloat = 0.0
-    var hasADShow = false
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         cusMapOverlay = CusMapOverlay.shareInstance(self)
         addCusAnnotattion = AddCusAnnotation.shareInstance(self)
         callWithOneKey = CallWIthOneKeyClass.shareInstance(self)
+        
+        // 设置记路距离背景 View 的圆角
+        self.distanceBGView.layer.masksToBounds = true
+        self.distanceBGView.layer.cornerRadius = 8.0
         
         // 创建 路况信息点
         wayPoint = UserWayPoint(time: NSDate())
@@ -57,15 +53,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // 创建 定位服务
         self.startLocation()
         self.detectionNetState()
-//        self.createAd()
     }
     
     override func viewDidAppear(animated: Bool) {
-        // 当存在 横幅广告 时，重新加载各组建
-//        if (hasADShow) {
-//            self.relayoutViews()
-//        }
-//        hasADShow = true
     }
     
     // MARK: - 判断 APP 所处的网络状态以提醒用户
@@ -203,8 +193,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.walkTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "saveWayPointInfo", userInfo: nil, repeats: true)
         self.walkTimer.fire()
         
-        self.createAlertView(NZAlertStyle.Info, title: "开始记路" , msg: "")
+        
         self.locationImageView.hidden = false
+        self.distanceBGView.hidden = true
+        self.distanceLabel.hidden = true
+        self.createAlertView(NZAlertStyle.Info, title: "开始记路" , msg: "")
     }
     
     func saveWayPointInfo() {
@@ -222,6 +215,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         
         self.createAlertView(NZAlertStyle.Success, title: "结束记路", msg: "")
+        
         self.locationImageView.hidden = true
         self.walkTimer.invalidate()
         
@@ -233,6 +227,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let wayPointArr: [UserWayPoint] = self.cusCoreData.searchPoints()
         if !wayPointArr.isEmpty && wayPointArr.count != 1 {
             self.setPointInfo(wayPointArr)
+            self.showUserDistance(wayPointArr)     // 设置用户走了多少米
         }
     }
     
@@ -259,12 +254,22 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     // 计算用户行走距离
-    func showUserDistance(locations: [UserWayPoint]) {
+    func showUserDistance(wayPointArr: [UserWayPoint]) {
+        distanceBGView.hidden = false
+        distanceLabel.hidden = false
+        distanceLabel.text = NSString(format: "您已经走了 %.1f 米", self.calculationDistance(wayPointArr))
         
     }
     
-    func calculationDistance(locations: [UserWayPoint]) -> CGFloat {
-        return 1;
+    func calculationDistance(wayPointArr: [UserWayPoint]) -> CGFloat {
+        let calculationDis = CalculationDistanceClass()
+        
+        var locations: [CLLocation] = []
+        for i in 0...(wayPointArr.count - 1) {
+            locations.append(calculationDis.gainCLLocationWithCoordinate(Double(wayPointArr[i].latitude), latitude: Double(wayPointArr[i].longitude)))
+        }
+        calculationDis.locations = locations
+        return calculationDis.calulationDistance()
     }
 
 // MARK: - 此处有问题
@@ -333,122 +338,4 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         alert.show();
     }
     
-    // MARK: - 广告
-    
-    // 创建广告
-    func createAd() {
-        iAdSupported = iAdTimeZoneSupported()
-        
-        if iAdSupported {
-            iAdView = ADBannerView(adType: ADAdType.Banner)
-            iAdView?.frame = CGRectMake(0, 0 - iAdView!.frame.height, iAdView!.frame.width, iAdView!.frame.height)
-            statusbarHeight = self.view.frame.size.height - iAdView!.frame.height
-            iAdView?.delegate = self
-            self.view.addSubview(iAdView!)
-            
-        } else {
-            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            bannerView?.adUnitID = "ca-app-pub-3724477525755491/7721017568"    // 设置 AdMob 的广告 ID
-            statusbarHeight = self.view.frame.size.height - bannerView!.frame.height   // 设置 banner 的 y 轴位置
-            bannerView?.frame.size.width = self.view.frame.size.width          // 设置 bannerView 的宽度，以应对不同尺寸的手机屏幕
-            bannerView?.delegate = self
-            bannerView?.rootViewController = self
-            self.view.addSubview(bannerView!)
-            
-            var request:GADRequest = GADRequest();
-            request.testDevices = NSArray(objects: GAD_SIMULATOR_ID);
-            
-            bannerView?.loadRequest(request)
-        }
-
-    }
-    
-    // 重画 banner 视图
-    func relayoutViews() {
-        var bannerFrame = iAdSupported ? iAdView!.frame : bannerView!.frame
-        bannerFrame.origin.x = 0
-        bannerFrame.origin.y = statusbarHeight
-        if iAdSupported {
-            iAdView!.frame = bannerFrame
-        } else {
-            bannerView!.frame = bannerFrame
-        }
-
-        // 使原来的视图高度减少一个 banner 的高度，或者上移一个 banner 的高度
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("relayoutMapView:"), userInfo: bannerFrame.size.height, repeats: false)
-    }
-    
-    func relayoutMapView(timer: NSTimer) {
-        let height:CGFloat = timer.userInfo as CGFloat
-        self.mainMapView.frame.size.height = self.view.frame.size.height - height
-        self.settingBtn.frame.origin.y = self.view.frame.size.height - height - self.settingBtn.frame.size.height - 20
-    }
-    
-    // MARK: - iAd
-    
-    // iAd func 判断该地区支不支持 iAd
-    func iAdTimeZoneSupported()->Bool {
-        let iAdTimeZones = "America/;US/;Pacific/;Asia/Tokyo;Europe/".componentsSeparatedByString(";")
-        var myTimeZone = NSTimeZone.localTimeZone().name
-        for zone in iAdTimeZones {
-            if (myTimeZone.hasPrefix(zone)) {
-                return true;
-            }
-        }
-        
-        return false;
-    }
-
-    // iAdBannerViewDelegate
-    func bannerViewWillLoadAd(banner: ADBannerView!) {
-        println("bannerViewWillLoadAd")
-    }
-    
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        println("bannerViewDidLoadAd")
-        relayoutViews()
-    }
-    
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        println("didFailToReceiveAd error:\(error)")
-        relayoutViews()   // 重画框架
-    }
-    
-    func bannerViewActionDidFinish(banner: ADBannerView!) {
-        println("bannerViewActionDidFinish")
-        relayoutViews()   // 重画框架
-    }
-    
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        println("bannerViewActionShouldBegin")
-        return true;
-    }
-
-    // MARK: - GADBannerView
-    
-    // GADBannerViewDelegate
-    func adViewDidReceiveAd(view: GADBannerView!) {
-        println("adViewDidReceiveAd:\(view)");
-        relayoutViews()
-    }
-    
-    func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        println("\(view) error:\(error)")
-        relayoutViews()
-    }
-    
-    func adViewWillPresentScreen(adView: GADBannerView!) {
-        println("adViewWillPresentScreen:\(adView)")
-        relayoutViews()
-    }
-    
-    func adViewWillLeaveApplication(adView: GADBannerView!) {
-        println("adViewWillLeaveApplication:\(adView)")
-        relayoutViews()
-    }
-    
-    func adViewWillDismissScreen(adView: GADBannerView!) {
-        println("adViewWillDismissScreen:\(adView)")
-        relayoutViews()
-    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="92m-UD-AUe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="92m-UD-AUe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -37,6 +37,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
+                                </connections>
+                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-c4-Xyv">
                                 <rect key="frame" x="540" y="120" width="40" height="40"/>
                                 <constraints>
@@ -109,30 +115,19 @@
                                     <segue destination="jcu-bg-vsx" kind="showDetail" id="ljP-ke-rwp"/>
                                 </connections>
                             </button>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7r-Rp-KEt">
+                            <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7r-Rp-KEt">
                                 <rect key="frame" x="68" y="28" width="512" height="46"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已经行走了 M 米" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="LNv-84-rrG">
-                                        <rect key="frame" x="0.0" y="11" width="512" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <color key="textColor" red="0.084625761047759207" green="0.66502225703412687" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.15598285551789959" green="0.78354284111648675" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50588235290000005" green="0.66274509800000003" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="9gP-Bl-Odn"/>
-                                    <constraint firstItem="LNv-84-rrG" firstAttribute="leading" secondItem="F7r-Rp-KEt" secondAttribute="leading" id="qMz-9D-h4r"/>
-                                    <constraint firstAttribute="trailing" secondItem="LNv-84-rrG" secondAttribute="trailing" id="s0c-lD-0Mx"/>
-                                    <constraint firstAttribute="centerY" secondItem="LNv-84-rrG" secondAttribute="centerY" id="vyO-BS-RM2"/>
                                 </constraints>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
-                                </connections>
-                            </mapView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已经走了 X 米" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-r6-RNp">
+                                <rect key="frame" x="68" y="41" width="520" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.66274509803921566" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -146,21 +141,24 @@
                             <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="Neo-6S-AhV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="4" id="QQs-fs-P6a"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="VTK-ls-BY2"/>
+                            <constraint firstItem="FBE-r6-RNp" firstAttribute="leading" secondItem="F7r-Rp-KEt" secondAttribute="leading" id="X73-l4-ZP1"/>
                             <constraint firstItem="nMM-10-djB" firstAttribute="leading" secondItem="XVM-J2-rn1" secondAttribute="leading" id="Zmm-pJ-MsJ"/>
                             <constraint firstItem="b0E-3R-36P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bXg-SH-Uk9"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="top" secondItem="F0d-c4-Xyv" secondAttribute="bottom" constant="15" id="gem-Ff-asF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OqW-X5-LA2" secondAttribute="trailing" constant="4" id="hi3-eI-S7W"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="leading" secondItem="F0d-c4-Xyv" secondAttribute="leading" id="hsy-RS-ZTu"/>
                             <constraint firstItem="F7r-Rp-KEt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ixe-Wg-m1v"/>
+                            <constraint firstItem="FBE-r6-RNp" firstAttribute="centerY" secondItem="F7r-Rp-KEt" secondAttribute="centerY" id="oML-aj-LXM"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="S4r-AS-cvS" secondAttribute="bottom" id="qqH-Ka-zeL"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="sXi-qw-1fs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F0d-c4-Xyv" secondAttribute="trailing" constant="4" id="tao-iJ-3et"/>
+                            <constraint firstItem="FBE-r6-RNp" firstAttribute="trailing" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="8" id="u3V-Cz-4n1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="callBtn" destination="a9z-N7-Xro" id="2vN-5Q-hyy"/>
                         <outlet property="distanceBGView" destination="F7r-Rp-KEt" id="c4t-ik-g9P"/>
-                        <outlet property="distanceLabel" destination="LNv-84-rrG" id="eRU-qM-bSO"/>
+                        <outlet property="distanceLabel" destination="FBE-r6-RNp" id="TgU-2D-sdU"/>
                         <outlet property="locationImageView" destination="b0E-3R-36P" id="Mhs-fT-K7Y"/>
                         <outlet property="mainMapView" destination="S4r-AS-cvS" id="bRJ-PZ-qDK"/>
                         <outlet property="settingBtn" destination="OqW-X5-LA2" id="IL0-yp-ZiD"/>
@@ -168,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="259"/>
+            <point key="canvasLocation" x="263" y="259"/>
         </scene>
         <!--设置-->
         <scene sceneID="m0S-Ud-sOc">
