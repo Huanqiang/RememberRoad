@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="92m-UD-AUe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="92m-UD-AUe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -95,7 +95,7 @@
                                     <constraint firstAttribute="width" constant="40" id="e1J-Vn-74B"/>
                                     <constraint firstAttribute="width" secondItem="nMM-10-djB" secondAttribute="height" multiplier="1:1" id="kWm-af-Rf1"/>
                                 </constraints>
-                                <state key="normal" image="Map_ChangedMapType2.png">
+                                <state key="normal" image="Map_ChangedMapType1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -115,36 +115,58 @@
                                     <segue destination="jcu-bg-vsx" kind="showDetail" id="ljP-ke-rwp"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7r-Rp-KEt">
+                                <rect key="frame" x="68" y="28" width="512" height="46"/>
+                                <color key="backgroundColor" red="0.50588235290000005" green="0.66274509800000003" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="9gP-Bl-Odn"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已经走了 X 米" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-r6-RNp">
+                                <rect key="frame" x="68" y="41" width="520" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.66274509803921566" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OqW-X5-LA2" secondAttribute="bottom" constant="20" id="141-ls-FEa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S4r-AS-cvS" secondAttribute="trailing" constant="-16" id="3Qr-YL-Gti"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="4F0-ed-n3h"/>
+                            <constraint firstItem="F7r-Rp-KEt" firstAttribute="leading" secondItem="a9z-N7-Xro" secondAttribute="trailing" constant="8" id="9Gc-9v-Xsm"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b0E-3R-36P" secondAttribute="bottom" constant="20" id="BvF-2a-vac"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GSd-bS-4db"/>
                             <constraint firstItem="nMM-10-djB" firstAttribute="top" secondItem="XVM-J2-rn1" secondAttribute="bottom" constant="15" id="Hgt-6t-Yyb"/>
                             <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="Neo-6S-AhV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="4" id="QQs-fs-P6a"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="VTK-ls-BY2"/>
+                            <constraint firstItem="FBE-r6-RNp" firstAttribute="leading" secondItem="F7r-Rp-KEt" secondAttribute="leading" id="X73-l4-ZP1"/>
                             <constraint firstItem="nMM-10-djB" firstAttribute="leading" secondItem="XVM-J2-rn1" secondAttribute="leading" id="Zmm-pJ-MsJ"/>
                             <constraint firstItem="b0E-3R-36P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bXg-SH-Uk9"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="top" secondItem="F0d-c4-Xyv" secondAttribute="bottom" constant="15" id="gem-Ff-asF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OqW-X5-LA2" secondAttribute="trailing" constant="4" id="hi3-eI-S7W"/>
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="leading" secondItem="F0d-c4-Xyv" secondAttribute="leading" id="hsy-RS-ZTu"/>
+                            <constraint firstItem="F7r-Rp-KEt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ixe-Wg-m1v"/>
+                            <constraint firstItem="FBE-r6-RNp" firstAttribute="centerY" secondItem="F7r-Rp-KEt" secondAttribute="centerY" id="oML-aj-LXM"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="S4r-AS-cvS" secondAttribute="bottom" id="qqH-Ka-zeL"/>
                             <constraint firstItem="S4r-AS-cvS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="sXi-qw-1fs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F0d-c4-Xyv" secondAttribute="trailing" constant="4" id="tao-iJ-3et"/>
+                            <constraint firstItem="FBE-r6-RNp" firstAttribute="trailing" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="8" id="u3V-Cz-4n1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="callBtn" destination="a9z-N7-Xro" id="2vN-5Q-hyy"/>
+                        <outlet property="distanceBGView" destination="F7r-Rp-KEt" id="c4t-ik-g9P"/>
+                        <outlet property="distanceLabel" destination="FBE-r6-RNp" id="TgU-2D-sdU"/>
                         <outlet property="locationImageView" destination="b0E-3R-36P" id="Mhs-fT-K7Y"/>
                         <outlet property="mainMapView" destination="S4r-AS-cvS" id="bRJ-PZ-qDK"/>
+                        <outlet property="settingBtn" destination="OqW-X5-LA2" id="IL0-yp-ZiD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="259"/>
+            <point key="canvasLocation" x="263" y="259"/>
         </scene>
         <!--设置-->
         <scene sceneID="m0S-Ud-sOc">
@@ -196,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="1016"/>
         </scene>
-        <!--View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="NwA-qq-Qjq">
             <objects>
-                <viewController id="YIE-iN-ZMO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YIE-iN-ZMO" customClass="AboutUsViewController" customModule="RememberRoad" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdM-A6-HFb"/>
                         <viewControllerLayoutGuide type="bottom" id="xga-pv-ecG"/>
@@ -208,7 +230,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-mG-QWX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_120.png" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-mG-QWX">
                                 <rect key="frame" x="240" y="20" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B6y-mG-QWX" secondAttribute="height" multiplier="1:1" id="0iJ-T1-REK"/>
@@ -227,7 +249,7 @@
                                     <constraint firstAttribute="height" constant="84" id="q0b-d1-bNG"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZdK-ff-CRq">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutUsCell" id="ZdK-ff-CRq">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZdK-ff-CRq" id="8Mb-Kb-twl">
@@ -236,7 +258,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014年 王焕强. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="68p-pV-qg2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014年 子叶. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="68p-pV-qg2">
                                 <rect key="frame" x="16" y="559" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nof-OJ-b9P"/>
@@ -348,7 +370,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xWx-TZ-2Qf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jcu-bg-vsx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jcu-bg-vsx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LKR-8E-MLW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -365,7 +387,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Map_ChangedMapType2.png" width="50" height="50"/>
+        <image name="Icon_120.png" width="120" height="120"/>
+        <image name="Map_ChangedMapType1.png" width="50" height="50"/>
         <image name="go_2.png" width="171" height="171"/>
         <image name="location.png" width="128" height="128"/>
         <image name="phone.png" width="64" height="64"/>

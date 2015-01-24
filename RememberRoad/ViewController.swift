@@ -9,12 +9,18 @@
 import UIKit
 import MapKit
 import CoreLocation
+import iAd
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, ADBannerViewDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var callBtn: UIButton!
+    @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var mainMapView: MKMapView!
+    @IBOutlet weak var distanceBGView: UIView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    
     var mapOperation: MapOperation = MapOperation.shareInstance()
     var location: CustomLoction? = CustomLoction.shareInstance()
     var addCusAnnotattion: AddCusAnnotation!
@@ -25,7 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var walkTimer: NSTimer = NSTimer()
     var routeLine: MKPolyline = MKPolyline()
     var locationAnnotation: CusAnnotation?
-    
+    var isNeedLocationAnnotation:Bool = true                      // NO:表示不需要添加定位标注，YES：表示需要
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +39,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         cusMapOverlay = CusMapOverlay.shareInstance(self)
         addCusAnnotattion = AddCusAnnotation.shareInstance(self)
         callWithOneKey = CallWIthOneKeyClass.shareInstance(self)
+        
+        // 设置记路距离背景 View 的圆角
+        self.distanceBGView.layer.masksToBounds = true
+        self.distanceBGView.layer.cornerRadius = 8.0
         
         // 创建 路况信息点
         wayPoint = UserWayPoint(time: NSDate())
@@ -42,6 +52,36 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         // 创建 定位服务
         self.startLocation()
+        self.detectionNetState()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+    }
+    
+    // MARK: - 判断 APP 所处的网络状态以提醒用户
+    func detectionNetState() {
+        let state:NSString = DetectionNetworkStatus.checkUpNetworkStatus()
+        var msg: NSString = "";
+        switch state {
+            case "0" : msg = "请您打开手机流量，否则只能显示您的大概位置，不能显示定位"
+            case "1" : msg = ""
+            case "2" : msg = "您正处于 WIFI 网络，不能准确定位，请使用手机流量"
+            default : msg = ""
+        }
+        
+        if !msg.isEqualToString("") {
+            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("createAlertView:"), userInfo: msg, repeats: false)
+        }
+    }
+    
+    func createAlertView(timer: NSTimer) {
+        let msg:String = timer.userInfo as String
+        var alert:BOAlertController = BOAlertController(title: "抱歉", message: msg, subView: nil, viewController: self);
+        let okItem:RIButtonItem = RIButtonItem.itemWithLabel("好的", action: {
+            println("1")
+        }) as RIButtonItem
+        alert.addButton(okItem, type:RIButtonItemType_Other)
+        alert.show()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +91,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     // MARK: - 地图服务
     func setCustonMap() {
-        self.mainMapView.mapType = .Satellite
+        self.mainMapView.mapType = .Standard
     }
     
     // 设置地图的显示范围
@@ -72,10 +112,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         location?.stopLocation()
     }
     
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+//        <#code#>
+    }
+    
     // 获取 定位信息
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!){
-        var currLocation : CLLocation = locations.last as CLLocation
-        let newLocation:CLLocation = currLocation.locationMarsFromEarth();
+        let currLocation : CLLocation = locations.last as CLLocation
+        
+        var newLocation:CLLocation = currLocation.locationMarsFromEarth()
+        if self.isLocationInOfChina(currLocation.coordinate) {
+            newLocation = currLocation
+        }
         
         self.setCoordinateRegion(newLocation.coordinate)
         self.wayPoint?.latitude = newLocation.coordinate.latitude;
@@ -96,17 +144,32 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 self.wayPoint?.address = p.name
                 
                 //添加标注
-                self.addLoctionAnnotation(p.name, coordinate: newLocation.coordinate)
+                if self.isNeedLocationAnnotation {
+                    self.addLoctionAnnotation(p.name, coordinate: newLocation.coordinate)
+                }
+                
             }else{
                 println("No Placemarks!")
             }
         });
     }
     
+    //判断是不是在中国
+    func isLocationInOfChina(location: CLLocationCoordinate2D) -> Bool {
+        if (location.longitude < 72.004 || location.longitude > 137.8347 || location.latitude < 0.8293 || location.latitude > 55.8271) {
+            return false;
+        }
+        return true;
+
+    }
+    
+
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
         println(error)
     }
+
     
+    // MARK: - 新增标注
     func addLoctionAnnotation(title: String, coordinate: CLLocationCoordinate2D) {
         if (locationAnnotation != nil) {
             self.mainMapView.removeAnnotation(locationAnnotation)
@@ -119,6 +182,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     // MARK: - 开始外出走动
     @IBAction func startWalkingOut(sender: AnyObject) {
+        if locationAnnotation != nil {
+            self.isNeedLocationAnnotation = true
+        }
+        
         self.addCusAnnotattion.removeAnnotation(mainMapView)
         self.cusMapOverlay.removeAllOverlay(mainMapView)
         self.wayPoint?.state = 0
@@ -126,8 +193,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.walkTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "saveWayPointInfo", userInfo: nil, repeats: true)
         self.walkTimer.fire()
         
-        self.createAlertView(NZAlertStyle.Info, title: "开始记路" , msg: "")
+        
         self.locationImageView.hidden = false
+        self.distanceBGView.hidden = true
+        self.distanceLabel.hidden = true
+        self.createAlertView(NZAlertStyle.Info, title: "开始记路" , msg: "")
     }
     
     func saveWayPointInfo() {
@@ -138,7 +208,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     // MARK: - 停止外出走动
     @IBAction func stopWalkingOut(sender: AnyObject) {
+        // 去除定位标注
+        if locationAnnotation != nil {
+            self.isNeedLocationAnnotation = false
+            self.mainMapView.removeAnnotation(locationAnnotation)
+        }
+        
         self.createAlertView(NZAlertStyle.Success, title: "结束记路", msg: "")
+        
         self.locationImageView.hidden = true
         self.walkTimer.invalidate()
         
@@ -150,6 +227,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let wayPointArr: [UserWayPoint] = self.cusCoreData.searchPoints()
         if !wayPointArr.isEmpty && wayPointArr.count != 1 {
             self.setPointInfo(wayPointArr)
+            self.showUserDistance(wayPointArr)     // 设置用户走了多少米
         }
     }
     
@@ -169,9 +247,29 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         coordinateArray = nil;
     }
     
-    // 添加标注
+    // 添加开始/结束标注
     func addAnnotation(subTitle: String,coordinate: CLLocationCoordinate2D) {
         addCusAnnotattion.createAnnotation(mainMapView, title: "标注", subTitle: subTitle, coordinate: coordinate)
+    }
+    
+    
+    // 计算用户行走距离
+    func showUserDistance(wayPointArr: [UserWayPoint]) {
+        distanceBGView.hidden = false
+        distanceLabel.hidden = false
+        distanceLabel.text = NSString(format: "您已经走了 %.1f 米", self.calculationDistance(wayPointArr))
+        
+    }
+    
+    func calculationDistance(wayPointArr: [UserWayPoint]) -> CGFloat {
+        let calculationDis = CalculationDistanceClass()
+        
+        var locations: [CLLocation] = []
+        for i in 0...(wayPointArr.count - 1) {
+            locations.append(calculationDis.gainCLLocationWithCoordinate(Double(wayPointArr[i].latitude), latitude: Double(wayPointArr[i].longitude)))
+        }
+        calculationDis.locations = locations
+        return calculationDis.calulationDistance()
     }
 
 // MARK: - 此处有问题
@@ -203,12 +301,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var btn: UIButton = sender as UIButton
         if btn.tag == 1 {
             btn.tag = 2
-            self.mainMapView.mapType = .Standard
-            btn.setImage(UIImage(named: "Map_ChangedMapType1"), forState: .Normal)
-        }else {
-            btn.tag = 1
             self.mainMapView.mapType = .Satellite
             btn.setImage(UIImage(named: "Map_ChangedMapType2"), forState: .Normal)
+        }else {
+            btn.tag = 1
+            self.mainMapView.mapType = .Standard
+            btn.setImage(UIImage(named: "Map_ChangedMapType1"), forState: .Normal)
         }
     }
     
@@ -239,4 +337,5 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var alert: NZAlertView = NZAlertView(style: style, title: title, message: msg, delegate: self)
         alert.show();
     }
+    
 }

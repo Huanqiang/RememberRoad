@@ -1,0 +1,27 @@
+
+/* Class = "IBUILabel"; text = "  Copyright (c) 2014年 王焕强. All rights reserved."; ObjectID = "68p-pV-qg2"; */
+"68p-pV-qg2.text" = "  Copyright (c) 2014年 王焕强. All rights reserved.";
+
+/* Class = "IBUILabel"; text = "户外记路"; ObjectID = "6xl-ca-xD5"; */
+"6xl-ca-xD5.text" = "户外记路";
+
+/* Class = "IBUIBarButtonItem"; title = "返回"; ObjectID = "76W-DM-fwa"; */
+"76W-DM-fwa.title" = "返回";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "E0j-F3-M4K"; */
+"E0j-F3-M4K.text" = "Title";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "OqW-X5-LA2"; */
+"OqW-X5-LA2.normalTitle" = "Button";
+
+/* Class = "IBUINavigationItem"; title = "设置"; ObjectID = "gDf-sI-j4B"; */
+"gDf-sI-j4B.title" = "设置";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "gdm-qD-akg"; */
+"gdm-qD-akg.text" = "Detail";
+
+/* Class = "IBUINavigationItem"; title = "通讯录"; ObjectID = "hA0-3M-2Ib"; */
+"hA0-3M-2Ib.title" = "通讯录";
+
+/* Class = "IBUIBarButtonItem"; title = "返回"; ObjectID = "vof-Ft-eWA"; */
+"vof-Ft-eWA.title" = "返回";

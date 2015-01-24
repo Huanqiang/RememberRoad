@@ -7,9 +7,11 @@
 #import "BOAlertController.h"
 #import "ChineseString.h"
 #import "CreateBlurIntroductionPlanels.h"
-
+#import "DetectionNetworkStatus.h"
 #import "CLLocation+YCLocation.h"
 
-// AFNetWorking
-#import "UIKit+AFNetworking.h"
-#import "AFNetworking.h"
+
+// GADBannerView
+#import "GADBannerView.h"
+#import "GADInterstitialDelegate.h"
+#import "GADInterstitial.h"

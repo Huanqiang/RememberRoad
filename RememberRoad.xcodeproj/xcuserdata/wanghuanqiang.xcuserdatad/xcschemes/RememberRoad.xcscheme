@@ -82,6 +82,14 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
+<<<<<<< HEAD
+=======
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
+>>>>>>> addAd
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
