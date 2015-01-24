@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4F21F886-D7E5-4360-994B-7B7245CF8A79</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RememberRoad</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6CEEC0795046732B67ADD88B1D17E6EE4833CB33</key>
+		<string>github.com:861645007/RememberRoad.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RememberRoad.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6CEEC0795046732B67ADD88B1D17E6EE4833CB33</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:861645007/RememberRoad.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6CEEC0795046732B67ADD88B1D17E6EE4833CB33</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6CEEC0795046732B67ADD88B1D17E6EE4833CB33</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RememberRoad</string>
+		</dict>
+	</array>
+</dict>
+</plist>
