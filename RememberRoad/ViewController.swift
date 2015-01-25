@@ -257,8 +257,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func showUserDistance(wayPointArr: [UserWayPoint]) {
         distanceBGView.hidden = false
         distanceLabel.hidden = false
-        distanceLabel.text = NSString(format: "您已经走了 %.1f 米", self.calculationDistance(wayPointArr))
-        
+        distanceLabel.text = NSString(format: "您已经走了 %.1f 米", Float(self.calculationDistance(wayPointArr)))
     }
     
     func calculationDistance(wayPointArr: [UserWayPoint]) -> CGFloat {
@@ -268,6 +267,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         for i in 0...(wayPointArr.count - 1) {
             locations.append(calculationDis.gainCLLocationWithCoordinate(Double(wayPointArr[i].latitude), latitude: Double(wayPointArr[i].longitude)))
         }
+        
         calculationDis.locations = locations
         return calculationDis.calulationDistance()
     }

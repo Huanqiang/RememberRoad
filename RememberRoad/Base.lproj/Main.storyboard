@@ -37,12 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
-                                </connections>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-c4-Xyv">
                                 <rect key="frame" x="540" y="120" width="40" height="40"/>
                                 <constraints>
@@ -128,15 +122,23 @@
                                 <color key="textColor" red="0.50588235294117645" green="0.66274509803921566" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-AS-cvS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gUW-B6-kVN"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OqW-X5-LA2" secondAttribute="bottom" constant="20" id="141-ls-FEa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="S4r-AS-cvS" secondAttribute="trailing" constant="-16" id="3Qr-YL-Gti"/>
+                            <constraint firstItem="S4r-AS-cvS" firstAttribute="trailingMargin" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="16" id="3Qr-YL-Gti"/>
+                            <constraint firstItem="S4r-AS-cvS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="3ad-qV-35w"/>
                             <constraint firstItem="a9z-N7-Xro" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="4F0-ed-n3h"/>
                             <constraint firstItem="F7r-Rp-KEt" firstAttribute="leading" secondItem="a9z-N7-Xro" secondAttribute="trailing" constant="8" id="9Gc-9v-Xsm"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b0E-3R-36P" secondAttribute="bottom" constant="20" id="BvF-2a-vac"/>
-                            <constraint firstItem="S4r-AS-cvS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GSd-bS-4db"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="S4r-AS-cvS" secondAttribute="bottom" id="DnU-X3-wIX"/>
+                            <constraint firstItem="S4r-AS-cvS" firstAttribute="leadingMargin" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GSd-bS-4db"/>
                             <constraint firstItem="nMM-10-djB" firstAttribute="top" secondItem="XVM-J2-rn1" secondAttribute="bottom" constant="15" id="Hgt-6t-Yyb"/>
                             <constraint firstItem="F0d-c4-Xyv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="Neo-6S-AhV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="4" id="QQs-fs-P6a"/>
@@ -149,8 +151,6 @@
                             <constraint firstItem="XVM-J2-rn1" firstAttribute="leading" secondItem="F0d-c4-Xyv" secondAttribute="leading" id="hsy-RS-ZTu"/>
                             <constraint firstItem="F7r-Rp-KEt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ixe-Wg-m1v"/>
                             <constraint firstItem="FBE-r6-RNp" firstAttribute="centerY" secondItem="F7r-Rp-KEt" secondAttribute="centerY" id="oML-aj-LXM"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="S4r-AS-cvS" secondAttribute="bottom" id="qqH-Ka-zeL"/>
-                            <constraint firstItem="S4r-AS-cvS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="sXi-qw-1fs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F0d-c4-Xyv" secondAttribute="trailing" constant="4" id="tao-iJ-3et"/>
                             <constraint firstItem="FBE-r6-RNp" firstAttribute="trailing" secondItem="F7r-Rp-KEt" secondAttribute="trailing" constant="8" id="u3V-Cz-4n1"/>
                         </constraints>
@@ -383,7 +383,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2p-ZO-hXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="1016"/>
+            <point key="canvasLocation" x="263" y="1016"/>
         </scene>
     </scenes>
     <resources>
