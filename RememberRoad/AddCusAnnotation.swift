@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class CusAnnotation: NSObject, MKAnnotation {
-    var coordinate:CLLocationCoordinate2D
+    var coordinate: CLLocationCoordinate2D
     var title: String = ""
     var subtitle: String = ""
     
@@ -19,13 +19,15 @@ class CusAnnotation: NSObject, MKAnnotation {
     }
 }
 
+
 class AddCusAnnotation: NSObject, MKMapViewDelegate {
     
     var mapDelegate: MKMapViewDelegate!
     var annotations: [MKAnnotation] = []
+    var myMapView: MKMapView!
     
     //定义类方法
-    class func shareInstance(delegate: MKMapViewDelegate) -> AddCusAnnotation{
+    class func shareInstance(mapView: MKMapView , delegate: MKMapViewDelegate) -> AddCusAnnotation{
         struct netSingle {
             static var predicate: dispatch_once_t = 0
             static var instance: AddCusAnnotation? = nil
@@ -34,47 +36,38 @@ class AddCusAnnotation: NSObject, MKMapViewDelegate {
         dispatch_once(&netSingle.predicate,{
             netSingle.instance = AddCusAnnotation()
             netSingle.instance?.mapDelegate = delegate
+            netSingle.instance?.myMapView = mapView
         })
         return netSingle.instance!
     }
     
-    func createAnnotation(myMapView: MKMapView, title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
-        var annotation: CusAnnotation = CusAnnotation(coordinate: coordinate)
-        annotation.title = title
-        annotation.subtitle = subTitle
+    // 创建标注
+    func createAnnotation(title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
+        var annotation: CusAnnotation = self.createSingleAnnotation(title, subTitle: subTitle, coordinate: coordinate)
         myMapView.delegate = self
         myMapView.addAnnotation(annotation)
         self.annotations.append(annotation)
     }
     
-    func addLocationAnnotation(myMapView: MKMapView, title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
+    // 添加单个标注
+    func addLocationAnnotation(title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
+        myMapView.delegate = self
+        myMapView.addAnnotation(self.createSingleAnnotation(title, subTitle: subTitle, coordinate: coordinate))
+    }
+    
+    // 创建单个标注
+    func createSingleAnnotation(title: String, subTitle: String, coordinate: CLLocationCoordinate2D) -> CusAnnotation {
         var annotation: CusAnnotation = CusAnnotation(coordinate: coordinate)
         annotation.title = title
         annotation.subtitle = subTitle
-        myMapView.delegate = self
-        myMapView.addAnnotation(annotation)
+        
+        return annotation
     }
     
-    func removeAnnotation(myMapView: MKMapView) {
+    // 移除地图上的所有标注
+    func removeAnnotation() {
         myMapView.removeAnnotations(annotations)
         annotations.removeAll(keepCapacity: true)
     }
-
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        var annotationView: MKAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier("CustomAnnotation")
-        
-        annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "CustomAnnotation")
-        annotationView?.canShowCallout = false
-        annotationView?.enabled = false
-        
-        if annotation.subtitle == "1" {
-            annotationView?.image = UIImage(named: "location_start.png")
-        }else {
-            annotationView?.image = UIImage(named: "location_end.png")
-        }
-
-        mapView.delegate = mapDelegate
-        return annotationView
-    }
-
 }
+

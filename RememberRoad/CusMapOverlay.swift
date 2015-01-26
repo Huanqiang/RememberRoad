@@ -51,6 +51,7 @@ class CusMapOverlay: NSObject, MKMapViewDelegate {
             routeLineView.fillColor = UIColor.redColor()
             routeLineView.strokeColor = UIColor.redColor()
             routeLineView.lineWidth = 3
+            routeLineView.alpha = 0.6
             return routeLineView
         }
         return nil

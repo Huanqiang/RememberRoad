@@ -37,7 +37,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         cusMapOverlay = CusMapOverlay.shareInstance(self)
-        addCusAnnotattion = AddCusAnnotation.shareInstance(self)
+        addCusAnnotattion = AddCusAnnotation.shareInstance(self.mainMapView , delegate: self)
         callWithOneKey = CallWIthOneKeyClass.shareInstance(self)
         
         // 设置记路距离背景 View 的圆角
@@ -97,7 +97,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     // 设置地图的显示范围
     func setCoordinateRegion(center: CLLocationCoordinate2D) {
         // 创建一个以center为中心，上下各1000米，左右各1000米得区域，但其是一个矩形，不符合MapView的横纵比例
-        let viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(center, 250, 250)
+        let viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(center, 500, 500)
         mainMapView.setRegion(viewRegion, animated: true)
     }
     
@@ -112,13 +112,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         location?.stopLocation()
     }
     
+    // MARK: - 地图定位服务
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
-//        <#code#>
-    }
-    
-    // 获取 定位信息
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!){
-        let currLocation : CLLocation = locations.last as CLLocation
+        let currLocation : CLLocation = userLocation.location as CLLocation
+//        mapView.
         
         var newLocation:CLLocation = currLocation.locationMarsFromEarth()
         if self.isLocationInOfChina(currLocation.coordinate) {
@@ -163,20 +160,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     }
     
-
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
-        println(error)
-    }
-
-    
     // MARK: - 新增标注
     func addLoctionAnnotation(title: String, coordinate: CLLocationCoordinate2D) {
         if (locationAnnotation != nil) {
             self.mainMapView.removeAnnotation(locationAnnotation)
         }
         locationAnnotation = CusAnnotation(coordinate: coordinate)
-        locationAnnotation?.title = title
-        locationAnnotation?.subtitle = "3"
+        locationAnnotation?.title = "3"
+        locationAnnotation?.subtitle = title
         self.mainMapView.addAnnotation(locationAnnotation)
     }
     
@@ -186,7 +177,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             self.isNeedLocationAnnotation = true
         }
         
-        self.addCusAnnotattion.removeAnnotation(mainMapView)
+        self.addCusAnnotattion.removeAnnotation()
         self.cusMapOverlay.removeAllOverlay(mainMapView)
         self.wayPoint?.state = 0
         
@@ -238,9 +229,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         for i in 0...(wayPointCount - 1) {
             coordinateArray[i] = CLLocationCoordinate2DMake(Double(wayPointArr[i].latitude), Double(wayPointArr[i].longitude))
         }
-
-        self.addAnnotation("1", coordinate: coordinateArray[0])
-        self.addAnnotation("2", coordinate: coordinateArray[wayPointCount - 1])
+        
+        
+        self.addAnnotation("此次行程的起点：", subTitle: wayPointArr[0].address, coordinate: coordinateArray[0])
+        self.addAnnotation("此次行程的终点：", subTitle: wayPointArr[wayPointCount - 1].address, coordinate: coordinateArray[wayPointCount - 1])
         
         cusMapOverlay.drawLineWithLocationArray(mainMapView, coordinateArray: coordinateArray, count: wayPointCount)
         free(coordinateArray);
@@ -248,8 +240,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     // 添加开始/结束标注
-    func addAnnotation(subTitle: String,coordinate: CLLocationCoordinate2D) {
-        addCusAnnotattion.createAnnotation(mainMapView, title: "标注", subTitle: subTitle, coordinate: coordinate)
+    func addAnnotation(title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
+        addCusAnnotattion.createAnnotation(title, subTitle: subTitle, coordinate: coordinate)
     }
     
     
@@ -278,23 +270,37 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var annotationView: MKAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier("CustomAnnotation")
         
         annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "CustomAnnotation")
-        annotationView?.canShowCallout = false
-        annotationView?.enabled = false
+        annotationView?.canShowCallout = true
+        annotationView?.enabled = true
 
-        if (annotation.subtitle? != nil) {
-            if annotation.subtitle == "1" {
+        if (annotation.title? != nil) {
+            if annotation.title == "此次行程的起点：" {
                 annotationView?.image = UIImage(named: "location_start.png")
-            }else if annotation.subtitle == "2" {
+            }else if annotation.title == "此次行程的终点：" {
                 annotationView?.image = UIImage(named: "location_end.png")
-            }else if annotation.subtitle == "3" {
+            }else if annotation.title == "3" {
                 annotationView?.image = UIImage(named: "LocationAnnotation.png")
-                annotationView?.enabled = true
+                annotationView?.canShowCallout = false
+                annotationView?.enabled = false
             }
         }
         
         mapView.delegate = self
         return annotationView
     }
+    
+    // MARK: - 选中大头针时触发
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        
+    }
+    
+    // MARK: - 取消选中时触发
+    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKAnnotationView!) {
+        
+    }
+    
+    
+
     
     // MARK: - 切换地图类型
     @IBAction func switchMapType(sender: AnyObject) {
@@ -309,7 +315,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             btn.setImage(UIImage(named: "Map_ChangedMapType1"), forState: .Normal)
         }
     }
-    
+
+// MARK: - 其他
     // MARK: - 一键call
     @IBAction func callWithOneKey(sender: AnyObject) {
         callWithOneKey.callWithOneKey()
