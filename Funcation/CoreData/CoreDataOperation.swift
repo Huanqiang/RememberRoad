@@ -54,12 +54,12 @@ class CoreDataOperation: NSObject {
         var fetchRequest: NSFetchRequest = NSFetchRequest()
         fetchRequest.entity = entity
         
-        //设置排序条件
+        // 设置排序条件
         if !sortDescriptors.isEmpty || sortDescriptors.count != 0 {
             fetchRequest.sortDescriptors = sortDescriptors
         }
         
-        //设置查询条件
+        // 设置查询条件
         if !predicates.isEmpty || predicates.count != 0 {
             for predicate: NSPredicate in predicates {
                 fetchRequest.predicate = predicate
@@ -67,7 +67,7 @@ class CoreDataOperation: NSObject {
         }
         
         var errorInfo:NSError?
-        //取结果集
+        // 取结果集
         var resultArr = context.executeFetchRequest(fetchRequest, error: &errorInfo) as [NSManagedObject]
         
         return resultArr
